@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lila", "Lila\Lila.csproj", "{7CC101E9-4E9E-4B0C-B55B-BB623F77BA42}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lila.DAL", "Lila.DAL\Lila.DAL.csproj", "{2E0CCA2D-7CA5-40ED-86ED-17E1D0146311}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lila.UI", "Lila.UI\Lila.UI.csproj", "{9B0C488D-ECD4-4376-B6E2-E20C91714E00}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -8,9 +10,13 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{7CC101E9-4E9E-4B0C-B55B-BB623F77BA42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7CC101E9-4E9E-4B0C-B55B-BB623F77BA42}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7CC101E9-4E9E-4B0C-B55B-BB623F77BA42}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7CC101E9-4E9E-4B0C-B55B-BB623F77BA42}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E0CCA2D-7CA5-40ED-86ED-17E1D0146311}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E0CCA2D-7CA5-40ED-86ED-17E1D0146311}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E0CCA2D-7CA5-40ED-86ED-17E1D0146311}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E0CCA2D-7CA5-40ED-86ED-17E1D0146311}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B0C488D-ECD4-4376-B6E2-E20C91714E00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B0C488D-ECD4-4376-B6E2-E20C91714E00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B0C488D-ECD4-4376-B6E2-E20C91714E00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B0C488D-ECD4-4376-B6E2-E20C91714E00}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
