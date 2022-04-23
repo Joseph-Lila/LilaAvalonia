@@ -1,10 +1,10 @@
 using Lila.DAL.Repository.Interfaces;
-using Lila.Domain;
+using Lila.Domain.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 namespace Lila.DAL.Repository;
 
-internal class EfRepository<T> : IRepository<T> where T : BaseEntity
+internal class EfRepository<T> : IRepository<T> where T : class, IBaseEntity
 {
     private readonly Microsoft.EntityFrameworkCore.DbContext _dbContext;
 

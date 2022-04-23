@@ -1,7 +1,10 @@
-﻿namespace Lila.Domain;
+﻿using Lila.Domain.Interfaces;
 
-public class Stage : BaseEntity
+namespace Lila.Domain;
+
+public class Stage : IBaseEntity
 {
+    public int Id { get; set; }
     public string? Title { get; set; }
     public string? Description { get; set; }
 }

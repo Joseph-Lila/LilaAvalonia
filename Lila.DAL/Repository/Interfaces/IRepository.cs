@@ -1,13 +1,12 @@
-using Lila.Domain;
+using Lila.Domain.Interfaces;
 
 namespace Lila.DAL.Repository.Interfaces;
 
-public interface IRepository<T> where T : BaseEntity
+public interface IRepository<T> where T : class?, IBaseEntity?
 {
-    public IQueryable<T> GetAll(); //получение коллекции объектов
-    public Task<T?> GetById(int id); // получение одного объекта по id
-    public Task<int> Create(T item); // создание объекта
-    
-    public Task Update(T item); // обновление объекта
-    public Task Delete(int id); // удаление объекта по id
+    public IQueryable<T> GetAll();
+    public Task<T?> GetById(int id);
+    public Task<int> Create(T item);
+    public Task Update(T item);
+    public Task Delete(int id);
 }

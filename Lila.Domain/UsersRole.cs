@@ -1,7 +1,10 @@
-﻿namespace Lila.Domain;
+﻿using Lila.Domain.Interfaces;
 
-public class UsersRole : BaseEntity
+namespace Lila.Domain;
+
+public class UsersRole : IBaseEntity
 {
+    public int Id { get; set; }
     public int UserId { get; set; }
     public int RoleId { get; set; }
 }

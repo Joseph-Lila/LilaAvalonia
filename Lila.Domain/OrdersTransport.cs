@@ -1,7 +1,10 @@
-﻿namespace Lila.Domain;
+﻿using Lila.Domain.Interfaces;
 
-public class OrdersTransport : BaseEntity
+namespace Lila.Domain;
+
+public class OrdersTransport : IBaseEntity
 {
+    public int Id { get; set; }
     public int TransportId { get; set; }
     public int MyOrderId { get; set; }
 }

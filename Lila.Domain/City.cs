@@ -1,11 +1,9 @@
-﻿namespace Lila.Domain;
+﻿using Lila.Domain.Interfaces;
 
-public class City : BaseEntity
+namespace Lila.Domain;
+
+public class City : IBaseEntity
 {
+    public int Id { get; set; }
     public string? Title { get; set; }
-    
-    public override string ToString()
-    {
-        return $"{Id}. ~~~ {Title}";
-    }
 }

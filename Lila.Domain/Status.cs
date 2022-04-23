@@ -1,7 +1,10 @@
-﻿namespace Lila.Domain;
+﻿using Lila.Domain.Interfaces;
 
-public class Status : BaseEntity
+namespace Lila.Domain;
+
+public class Status : IBaseEntity
 {
+    public int Id { get; set; }
     public string? Title { get; set; }
     public string? Description { get; set; }
 }

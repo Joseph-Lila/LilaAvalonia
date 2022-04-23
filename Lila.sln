@@ -4,6 +4,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lila.DAL", "Lila.DAL\Lila.D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lila.Domain", "Lila.Domain\Lila.Domain.csproj", "{3390E7DE-8DCC-490E-AFE0-17BEF95B0C9D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lila.BLL", "Lila.BLL\Lila.BLL.csproj", "{1E650D72-CDEC-4F14-9FFF-E12F5A9020F3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lila.Desktop", "Lila.Desktop\Lila.Desktop.csproj", "{22AC6E92-D775-4110-BD32-282F182CFB6F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +22,13 @@ Global
 		{3390E7DE-8DCC-490E-AFE0-17BEF95B0C9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3390E7DE-8DCC-490E-AFE0-17BEF95B0C9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3390E7DE-8DCC-490E-AFE0-17BEF95B0C9D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E650D72-CDEC-4F14-9FFF-E12F5A9020F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E650D72-CDEC-4F14-9FFF-E12F5A9020F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E650D72-CDEC-4F14-9FFF-E12F5A9020F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E650D72-CDEC-4F14-9FFF-E12F5A9020F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22AC6E92-D775-4110-BD32-282F182CFB6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22AC6E92-D775-4110-BD32-282F182CFB6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22AC6E92-D775-4110-BD32-282F182CFB6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22AC6E92-D775-4110-BD32-282F182CFB6F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

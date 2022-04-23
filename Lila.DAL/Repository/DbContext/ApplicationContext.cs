@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Lila.DAL.Repository.DbContext;
 
-internal class ApplicationContext : Microsoft.EntityFrameworkCore.DbContext
+internal sealed class ApplicationContext : Microsoft.EntityFrameworkCore.DbContext
 {
     public DbSet<City> Cities => Set<City>();
     public DbSet<Customer> Customers => Set<Customer>();
@@ -22,7 +22,10 @@ internal class ApplicationContext : Microsoft.EntityFrameworkCore.DbContext
     public DbSet<User> Users => Set<User>();
     public DbSet<UsersRole> UsersRoles => Set<UsersRole>();
 
-    public ApplicationContext(DbContextOptions<ApplicationContext> options) : base(options) { }
+    public ApplicationContext(DbContextOptions<ApplicationContext> options) : base(options)
+    {
+        Database.EnsureCreated();
+    }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

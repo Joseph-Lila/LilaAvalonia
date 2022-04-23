@@ -1,7 +1,10 @@
-﻿namespace Lila.Domain;
+﻿using Lila.Domain.Interfaces;
 
-public class Transport : BaseEntity
+namespace Lila.Domain;
+
+public class Transport : IBaseEntity
 {
+    public int Id { get; set; }
     public int KindId { get; set; }
     public int FleetId { get; set; }
 }
