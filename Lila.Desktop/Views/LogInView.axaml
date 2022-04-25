@@ -1,9 +1,35 @@
 <UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:desktop="clr-namespace:Lila.Desktop"
              x:Class="Lila.Desktop.Views.LogInView">
-    <StackPanel HorizontalAlignment="Center"
-                VerticalAlignment="Center">
-        <TextBlock Text="Hi, I'm the LogIn view!"/>
-    </StackPanel>
+    <Border Background="Ivory" Padding="100">
+        <Grid Margin="30">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition  Width="*"></ColumnDefinition>
+                <ColumnDefinition  Width="*"></ColumnDefinition>
+                <ColumnDefinition  Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            
+            <TextBlock Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="40">
+                Welcome!
+            </TextBlock>
+            <TextBox Grid.Row="1" Grid.Column="1" AcceptsReturn="True" Text="{Binding TxtBoxLogIn.Value }" Name="TxtBoxLogin" VerticalAlignment="Center" HorizontalAlignment="Stretch" FontSize="40" 
+                     Watermark="Login" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+            <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding TxtBoxPassword.Value }" Name="TxtBoxPassword" VerticalAlignment="Center" HorizontalAlignment="Stretch" FontSize="40" 
+                     PasswordChar="#" Watermark="Password" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+            <Button Grid.Row="3" Grid.Column="1" Background="Tan" VerticalAlignment="Center" HorizontalAlignment="Stretch" 
+                    FontSize="40" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Content="Log in" Command="{Binding BtnLogIn}"/>
+            <Button Grid.Row="4" Grid.Column="1" Background="Moccasin" VerticalAlignment="Center" HorizontalAlignment="Stretch" 
+                    FontSize="40" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Content="Forget password?" Command="{Binding BtnGetPassword}"/>
+            <Button Grid.Row="5" Grid.Column="1" Background="Plum" VerticalAlignment="Center" HorizontalAlignment="Stretch"
+                    FontSize="40" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Content="Sign Up" Command="{Binding BtnSignUp}"/>
+        </Grid>
+    </Border>
 </UserControl>

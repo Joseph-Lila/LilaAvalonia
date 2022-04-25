@@ -19,6 +19,7 @@ namespace Lila.Desktop.ViewModels
                     Router.NavigationStack.Clear();
                     return Router.Navigate.Execute(new LogInViewModel(this));
                 });
+            GoLogIn.Execute();
         }
     }
 }
