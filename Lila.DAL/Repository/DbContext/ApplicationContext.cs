@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Lila.DAL.Repository.DbContext;
 
-internal sealed class ApplicationContext : Microsoft.EntityFrameworkCore.DbContext
+public sealed class ApplicationContext : Microsoft.EntityFrameworkCore.DbContext
 {
     public DbSet<City> Cities => Set<City>();
     public DbSet<Customer> Customers => Set<Customer>();

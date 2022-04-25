@@ -3,7 +3,7 @@ using Lila.BLL.Services.Interfaces;
 
 namespace Lila.BLL.Services;
 
-public class StageManager : IStageManager
+public class StageManager
 {
     public List<StageDto?> GetAll()
     {
@@ -15,7 +15,7 @@ public class StageManager : IStageManager
         throw new NotImplementedException();
     }
 
-    public Task Delete(int id)
+    public Task<Task> Delete(int id)
     {
         throw new NotImplementedException();
     }

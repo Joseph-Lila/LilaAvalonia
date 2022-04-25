@@ -3,7 +3,7 @@ using Lila.BLL.Services.Interfaces;
 
 namespace Lila.BLL.Services;
 
-public class MyOrderManager : IMyOrderManager
+public class MyOrderManager
 {
     public List<MyOrderDto?> GetAll()
     {
@@ -15,7 +15,7 @@ public class MyOrderManager : IMyOrderManager
         throw new NotImplementedException();
     }
 
-    public Task Delete(int id)
+    public Task<Task> Delete(int id)
     {
         throw new NotImplementedException();
     }

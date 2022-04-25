@@ -1,11 +1,16 @@
-using Avalonia.Controls;
+using Avalonia.Markup.Xaml;
+using Avalonia.ReactiveUI;
+using Lila.Desktop.ViewModels;
+using ReactiveUI;
 
-namespace Lila.Desktop.Views;
-
-public partial class MainWindow : Window
+namespace Lila.Desktop.Views
 {
-    public MainWindow()
+    public partial class MainWindow : ReactiveWindow<MainWindowViewModel>
     {
-        InitializeComponent();
+        public MainWindow()
+        {
+            this.WhenActivated(disposables => { });
+            AvaloniaXamlLoader.Load(this);
+        }
     }
 }

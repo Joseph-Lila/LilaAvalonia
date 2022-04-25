@@ -1,32 +1,45 @@
 using Lila.BLL.DtoModels;
+using Lila.BLL.Mappers;
 using Lila.BLL.Services.Interfaces;
+using Lila.DAL.Repository.Interfaces;
+using Lila.Domain;
+
 
 namespace Lila.BLL.Services;
 
 public class CityManager : ICityManager
 {
+    private readonly IRepository<City> _repository;
+
+    public CityManager(IRepository<City> repository)
+    {
+        _repository = repository;
+    }
+    
     public List<CityDto?> GetAll()
     {
-        throw new NotImplementedException();
+        var items = _repository.GetAll().ToList();
+        return CityMapper.CastToDto(items);
     }
 
-    public Task<CityDto?> GetById(int id)
+    public async Task<CityDto?> GetById(int id)
     {
-        throw new NotImplementedException();
+        var item = await _repository.GetById(id);
+        return await CityMapper.CastToDto(item);
     }
 
-    public Task Delete(int id)
+    public async Task Delete(int id)
     {
-        throw new NotImplementedException();
+        await _repository.Delete(id);
     }
 
-    public Task<int> Create(CityDto? item)
+    public async Task<int> Create(CityDto? item)
     {
-        throw new NotImplementedException();
+        return await _repository.Create(await CityMapper.CastFromDto(item) ?? throw new InvalidOperationException());
     }
 
-    public Task Update(CityDto? item)
+    public async Task Update(CityDto? item)
     {
-        throw new NotImplementedException();
+        await _repository.Update(await CityMapper.CastFromDto(item) ?? throw new InvalidOperationException());
     }
 }

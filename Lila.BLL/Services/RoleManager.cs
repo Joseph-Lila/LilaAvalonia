@@ -3,7 +3,7 @@ using Lila.BLL.Services.Interfaces;
 
 namespace Lila.BLL.Services;
 
-public class RoleManager : IRoleManager
+public class RoleManager
 {
     public List<RoleDto?> GetAll()
     {
@@ -15,7 +15,7 @@ public class RoleManager : IRoleManager
         throw new NotImplementedException();
     }
 
-    public Task Delete(int id)
+    public Task<Task> Delete(int id)
     {
         throw new NotImplementedException();
     }

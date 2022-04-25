@@ -1,32 +1,17 @@
 using Lila.BLL.DtoModels;
 using Lila.BLL.Services.Interfaces;
+using Lila.DAL.Repository.Interfaces;
+using Lila.Domain;
 
 namespace Lila.BLL.Services;
 
-public class CustomerManager : ICustomerManager
+public class CustomerManager
 {
-    public List<CustomerDto?> GetAll()
-    {
-        throw new NotImplementedException();
-    }
+    private readonly IRepository<Customer> _repository;
 
-    public Task<CustomerDto?> GetById(int id)
+    public CustomerManager(IRepository<Customer> repository)
     {
-        throw new NotImplementedException();
+        _repository = repository;
     }
-
-    public Task Delete(int id)
-    {
-        throw new NotImplementedException();
-    }
-
-    public Task<int> Create(CustomerDto? item)
-    {
-        throw new NotImplementedException();
-    }
-
-    public Task Update(CustomerDto? item)
-    {
-        throw new NotImplementedException();
-    }
+    
 }

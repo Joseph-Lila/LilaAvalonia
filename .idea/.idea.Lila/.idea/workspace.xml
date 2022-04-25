@@ -24,6 +24,14 @@
     <option name="WARN_ABOUT_CRLF" value="false" />
     <option name="WARN_ABOUT_DETACHED_HEAD" value="false" />
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/a74e8dff9c187e7a7c97bae4d6612ebf7868c364a3175eba155c09d934c0/Window.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -40,7 +48,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Study/university/Term_6/Lern_6_sem/ИГИ/Курсовая работа/CourceProject" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../RoutingExample" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -218,6 +226,10 @@
       <workItem from="1650572823036" duration="7380000" />
       <workItem from="1650611588255" duration="8461000" />
       <workItem from="1650744123347" duration="3731000" />
+      <workItem from="1650749073907" duration="2769000" />
+      <workItem from="1650802595204" duration="2182000" />
+      <workItem from="1650847261547" duration="1797000" />
+      <workItem from="1650874168851" duration="16771000" />
     </task>
     <servers />
   </component>

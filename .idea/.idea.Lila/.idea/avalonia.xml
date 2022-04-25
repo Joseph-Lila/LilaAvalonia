@@ -4,6 +4,9 @@
     <option name="projectPerEditor">
       <map>
         <entry key="Lila.Avalonia/Views/MainWindow.axaml" value="Lila.Avalonia/Lila.Avalonia.csproj" />
+        <entry key="Lila.Desktop/App.axaml" value="Lila.Desktop/Lila.Desktop.csproj" />
+        <entry key="Lila.Desktop/Views/FirstView.axaml" value="Lila.Desktop/Lila.Desktop.csproj" />
+        <entry key="Lila.Desktop/Views/LogInView.axaml" value="Lila.Desktop/Lila.Desktop.csproj" />
         <entry key="Lila.Desktop/Views/MainWindow.axaml" value="Lila.Desktop/Lila.Desktop.csproj" />
         <entry key="Liloniya/MainWindow.axaml" value="Liloniya/Liloniya.csproj" />
       </map>
