@@ -44,12 +44,12 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "WebServerToolWindowFactoryState": "false",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected=".NET Project.Lila.Desktop">
     <configuration name="Avalonia.UI" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
@@ -229,6 +229,8 @@
       <workItem from="1650847261547" duration="1797000" />
       <workItem from="1650874168851" duration="16771000" />
       <workItem from="1650906406366" duration="9249000" />
+      <workItem from="1650962477147" duration="56000" />
+      <workItem from="1651185707428" duration="737000" />
     </task>
     <servers />
   </component>

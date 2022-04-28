@@ -36,7 +36,6 @@ public class LogInViewModel : ReactiveObject, IRoutableViewModel
 
     public void BtnLogIn()
     {
-        Console.WriteLine("Wow");
         // choose role functionality
     }
 
