@@ -8,6 +8,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lila.BLL", "Lila.BLL\Lila.B
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lila.Desktop", "Lila.Desktop\Lila.Desktop.csproj", "{0983E487-3259-4E96-B749-3DE76C476DCC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lila.Web", "Lila.Web\Lila.Web.csproj", "{03F1A3F1-82F0-40E1-866F-DBD6D179B8CB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,9 @@ Global
 		{0983E487-3259-4E96-B749-3DE76C476DCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0983E487-3259-4E96-B749-3DE76C476DCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0983E487-3259-4E96-B749-3DE76C476DCC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03F1A3F1-82F0-40E1-866F-DBD6D179B8CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03F1A3F1-82F0-40E1-866F-DBD6D179B8CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03F1A3F1-82F0-40E1-866F-DBD6D179B8CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03F1A3F1-82F0-40E1-866F-DBD6D179B8CB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

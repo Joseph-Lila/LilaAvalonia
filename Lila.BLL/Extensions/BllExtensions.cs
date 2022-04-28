@@ -7,7 +7,7 @@ namespace Lila.BLL.Extensions;
 
 public static class BllExtensions
 {
-    public static void ConfigureCllService(this IServiceCollection services, string connectionString)
+    public static void ConfigureBllService(this IServiceCollection services, string connectionString)
     {
         services.ConfigureDalServices(connectionString);
         services.AddScoped(typeof(ICityManager), typeof(CityManager));

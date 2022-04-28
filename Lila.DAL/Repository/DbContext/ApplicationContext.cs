@@ -24,7 +24,7 @@ public sealed class ApplicationContext : Microsoft.EntityFrameworkCore.DbContext
 
     public ApplicationContext(DbContextOptions<ApplicationContext> options) : base(options)
     {
-        Database.EnsureCreated();
+        
     }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)

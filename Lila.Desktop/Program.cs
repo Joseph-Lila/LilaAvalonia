@@ -1,4 +1,6 @@
-﻿using Avalonia;
+﻿using System;
+using System.IO;
+using Avalonia;
 using Avalonia.ReactiveUI;
 using Lila.Desktop.ViewModels;
 using Lila.Desktop.Views;
@@ -12,9 +14,7 @@ namespace Lila.Desktop
     {
         public static void Main(string[] args)
         {
-            string logPath = projectDirectory + "/Lila.UI/DataSources/logs.txt";
-            string sqliteDb = $"Data source={projectDirectory}/Lila.UI/DataSources/SqLite/sqlite.db";
-            string csvBeginPath = projectDirectory + "/Lila.UI/DataSources/CSV/";
+            
             BuildAvaloniaApp().Start<MainWindow>(
                 () => new MainWindowViewModel()
                 );

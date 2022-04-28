@@ -16,4 +16,8 @@
       <ProjectReference Include="..\Lila.Domain\Lila.Domain.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Migrations" />
+    </ItemGroup>
+
 </Project>
