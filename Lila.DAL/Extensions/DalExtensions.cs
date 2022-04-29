@@ -17,20 +17,5 @@ public static class DalExtensions
 
         services.AddScoped(typeof(IRepository<>), typeof(EfRepository<>));
         services.AddScoped<IRepository<City>, EfRepository<City>>();
-        services.AddScoped<IRepository<Customer>, EfRepository<Customer>>();
-        services.AddScoped<IRepository<CustomersCity>, EfRepository<CustomersCity>>();
-        services.AddScoped<IRepository<Employee>, EfRepository<Employee>>();
-        services.AddScoped<IRepository<Fleet>, EfRepository<Fleet>>();
-        services.AddScoped<IRepository<MyOrder>, EfRepository<MyOrder>>();
-        services.AddScoped<IRepository<OrdersService>, EfRepository<OrdersService>>();
-        services.AddScoped<IRepository<OrdersTransport>, EfRepository<OrdersTransport>>();
-        services.AddScoped<IRepository<Role>, EfRepository<Role>>();
-        services.AddScoped<IRepository<Service>, EfRepository<Service>>();
-        services.AddScoped<IRepository<Stage>, EfRepository<Stage>>();
-        services.AddScoped<IRepository<Status>, EfRepository<Status>>();
-        services.AddScoped<IRepository<Transport>, EfRepository<Transport>>();
-        services.AddScoped<IRepository<TransportsKind>, EfRepository<TransportsKind>>();
-        services.AddScoped<IRepository<User>, EfRepository<User>>();
-        services.AddScoped<IRepository<UsersRole>, EfRepository<UsersRole>>();
     }
 }
