@@ -46,14 +46,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/home/lila/Study/university/Term_6/Lern_6_sem/ИГИ/Курсовая работа/CourceProject",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/lila/Study/university/Term_6/Lern_6_sem/ИГИ/Курсовая работа/CourceProject&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
-  <component name="RunManager" selected=".NET Project.Lila.Desktop">
+}</component>
+  <component name="RunManager" selected=".NET Launch Settings Profile.Lila.Web">
     <configuration name="Avalonia.UI" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
       <option name="PROGRAM_PARAMETERS" value="" />
@@ -267,7 +267,8 @@
       <workItem from="1650962477147" duration="56000" />
       <workItem from="1651185707428" duration="737000" />
       <workItem from="1651186564085" duration="25000" />
-      <workItem from="1651186666136" duration="3236000" />
+      <workItem from="1651186666136" duration="5084000" />
+      <workItem from="1651235642886" duration="3084000" />
     </task>
     <servers />
   </component>

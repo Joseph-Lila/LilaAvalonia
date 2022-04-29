@@ -15,6 +15,7 @@ public static class DalExtensions
 
         services.AddDbContext<ApplicationContext>(options => options.UseSqlite(connectionString));
 
+        services.AddScoped(typeof(IRepository<>), typeof(EfRepository<>));
         services.AddScoped<IRepository<City>, EfRepository<City>>();
         services.AddScoped<IRepository<Customer>, EfRepository<Customer>>();
         services.AddScoped<IRepository<CustomersCity>, EfRepository<CustomersCity>>();

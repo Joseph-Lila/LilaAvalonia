@@ -1,27 +1,20 @@
-var builder = WebApplication.CreateBuilder(args);
+using System.Text;
+using Lila.BLL.DtoModels;
+using Lila.BLL.Extensions;
+using Lila.BLL.Services.Interfaces;
+using Microsoft.Extensions.DependencyInjection;
 
-// Add services to the container.
-builder.Services.AddControllersWithViews();
-
+var builder = WebApplication.CreateBuilder();
+builder.Services.AddMvc();
+builder.Services.ConfigureBllService("Data source=/home/lila/RiderProjects/Lila/Db.sqlite");
+var services = builder.Services;
+ 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-if (!app.Environment.IsDevelopment())
+app.Run(async context =>
 {
-    app.UseExceptionHandler("/Home/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-    app.UseHsts();
-}
-
-app.UseHttpsRedirection();
-app.UseStaticFiles();
-
-app.UseRouting();
-
-app.UseAuthorization();
-
-app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
-
+    var loki = app.Services.GetService<ICityManager>(); 
+    await context.Response.WriteAsync($": {loki?.Create(new CityDto() {Id = 5, Title = "Lion"})}");
+});
+ 
 app.Run();
