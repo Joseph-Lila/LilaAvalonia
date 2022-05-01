@@ -8,14 +8,13 @@ public class Startup
     {
         Configuration = configuration;
     }
-    public IConfiguration Configuration { get; }
+
+    private IConfiguration Configuration { get; }
 
     public void ConfigureServices(IServiceCollection services)
     {
-        services.AddLocalization(opts => { opts.ResourcesPath = "Resources"; });
-        services.ConfigureBllService(Configuration.GetConnectionString("DefaultConnection"));
-        services.AddSession();
-        services.AddControllersWithViews();
+        services.AddRazorPages();
+        services.ConfigureBllService(Configuration.GetConnectionString("DefaultConnection")!);
     }
 
     public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -26,26 +25,20 @@ public class Startup
         }
         else
         {
-            app.UseExceptionHandler("/Home/Error");
-
-            // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+            app.UseExceptionHandler("/Error");
             app.UseHsts();
         }
-
-        app.UseSession();
+ 
         app.UseHttpsRedirection();
         app.UseStaticFiles();
-
+ 
         app.UseRouting();
-
-        app.UseAuthentication();
+ 
         app.UseAuthorization();
-
+ 
         app.UseEndpoints(endpoints =>
         {
-            endpoints.MapControllerRoute(
-                name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}");
+            endpoints.MapRazorPages();
         });
     }
 }

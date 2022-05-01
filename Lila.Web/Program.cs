@@ -1,20 +1,16 @@
-using System.Text;
-using Lila.BLL.DtoModels;
-using Lila.BLL.Extensions;
-using Lila.BLL.Services.Interfaces;
-using Microsoft.Extensions.DependencyInjection;
+namespace Lila.Web;
 
-var builder = WebApplication.CreateBuilder();
-builder.Services.AddMvc();
-builder.Services.ConfigureBllService("Data source=/home/lila/RiderProjects/Lila/Db.sqlite");
-var services = builder.Services;
- 
-var app = builder.Build();
-
-app.Run(async context =>
+public static class Program
 {
-    var loki = app.Services.GetService<ICityManager>(); 
-    await context.Response.WriteAsync($": {loki?.Create(new CityDto() {Id = 5, Title = "Lion"})}");
-});
- 
-app.Run();
+    public static void Main(string[] args)
+    {
+        CreateHostBuilder(args).Build().Run();
+    }
+
+    private static IHostBuilder CreateHostBuilder(string[] args) =>
+        Host.CreateDefaultBuilder(args)
+            .ConfigureWebHostDefaults(webBuilder =>
+            {
+                webBuilder.UseStartup<Startup>();
+            });
+}

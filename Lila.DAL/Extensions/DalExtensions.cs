@@ -12,10 +12,7 @@ public static class DalExtensions
     public static void ConfigureDalServices(this IServiceCollection services, string connectionString)
     {
         services.AddScoped<DbContext, ApplicationContext>();
-
         services.AddDbContext<ApplicationContext>(options => options.UseSqlite(connectionString));
-
         services.AddScoped(typeof(IRepository<>), typeof(EfRepository<>));
-        services.AddScoped<IRepository<City>, EfRepository<City>>();
     }
 }

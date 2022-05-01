@@ -4,7 +4,8 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Lila.DAL.Repository;
 
-internal class EfRepository<T> : IRepository<T> where T : class, IBaseEntity
+internal class EfRepository<TEntity> : IRepository<TEntity>
+    where TEntity : class, IBaseEntity
 {
     private readonly Microsoft.EntityFrameworkCore.DbContext _dbContext;
 
@@ -13,36 +14,34 @@ internal class EfRepository<T> : IRepository<T> where T : class, IBaseEntity
         _dbContext = dbContext;
     }
     
-    public async Task<int> Create(T item)
+    public List<TEntity> GetAll()
     {
-        _dbContext.Set<T>().Add(item);
-        await _dbContext.SaveChangesAsync();
+        return _dbContext.Set<TEntity>().AsNoTracking().ToList();
+    }
 
+    public TEntity GetById(int id)
+    {
+        return _dbContext.Set<TEntity>()
+            .AsNoTracking()
+            .FirstOrDefault(e => e.Id == id)!;
+    }
+
+    public int Create(TEntity item)
+    {
+        _dbContext.Set<TEntity>().Add(item);
+        _dbContext.SaveChanges();
         return item.Id;
     }
 
-    public async Task Delete(int id)
+    public void Update(TEntity item)
     {
-        var entity = await GetById(id);
-        if (entity != null) _dbContext.Set<T>().Remove(entity);
-        await _dbContext.SaveChangesAsync();
+        _dbContext.Set<TEntity>().Update(item);
+        _dbContext.SaveChanges();
     }
 
-    public IQueryable<T> GetAll()
+    public void Delete(TEntity item)
     {
-        return _dbContext.Set<T>().AsNoTracking();
-    }
-
-    public async Task<T?> GetById(int id)
-    {
-        return await _dbContext.Set<T>()
-            .AsNoTracking()
-            .FirstOrDefaultAsync(item => item.Id == id);
-    }
-
-    public async Task Update(T item)
-    {
-        _dbContext.Set<T>().Update(item);
-        await _dbContext.SaveChangesAsync();
+        _dbContext.Set<TEntity>().Remove(item);
+        _dbContext.SaveChanges();
     }
 }

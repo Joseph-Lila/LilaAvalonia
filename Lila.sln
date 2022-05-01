@@ -6,7 +6,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lila.Domain", "Lila.Domain\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lila.BLL", "Lila.BLL\Lila.BLL.csproj", "{1E650D72-CDEC-4F14-9FFF-E12F5A9020F3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lila.Web", "Lila.Web\Lila.Web.csproj", "{03F1A3F1-82F0-40E1-866F-DBD6D179B8CB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lila.Web", "Lila.Web\Lila.Web.csproj", "{94F85A1F-65AF-43F0-B74B-4AB6CCA03FF9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,9 +26,9 @@ Global
 		{1E650D72-CDEC-4F14-9FFF-E12F5A9020F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1E650D72-CDEC-4F14-9FFF-E12F5A9020F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1E650D72-CDEC-4F14-9FFF-E12F5A9020F3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{03F1A3F1-82F0-40E1-866F-DBD6D179B8CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{03F1A3F1-82F0-40E1-866F-DBD6D179B8CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{03F1A3F1-82F0-40E1-866F-DBD6D179B8CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{03F1A3F1-82F0-40E1-866F-DBD6D179B8CB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94F85A1F-65AF-43F0-B74B-4AB6CCA03FF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94F85A1F-65AF-43F0-B74B-4AB6CCA03FF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94F85A1F-65AF-43F0-B74B-4AB6CCA03FF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94F85A1F-65AF-43F0-B74B-4AB6CCA03FF9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
