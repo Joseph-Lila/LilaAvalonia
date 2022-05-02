@@ -1,0 +1,18 @@
+@page
+@model LogInModel
+@{
+    ViewData["Title"] = "Вход...";
+}
+
+<h2>Login Form</h2>
+<form method='post'>
+    <p>
+        <label>Email</label><br />
+        <input name='email' />
+    </p>
+    <p>
+        <label>Password</label><br />
+        <input type='password' name='password' />
+    </p>
+    <input type='submit' value='Login' />
+</form>

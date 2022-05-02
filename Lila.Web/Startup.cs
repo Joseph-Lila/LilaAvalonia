@@ -1,4 +1,5 @@
 using Lila.BLL.Extensions;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 namespace Lila.Web;
 
@@ -13,6 +14,14 @@ public class Startup
 
     public void ConfigureServices(IServiceCollection services)
     {
+        services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+            .AddCookie(options =>
+            {
+                options.LoginPath = "/LogIn";
+                options.AccessDeniedPath = "/AccessDenied";
+            });
+
+        services.AddAuthorization();
         services.AddRazorPages();
         services.ConfigureBllService(Configuration.GetConnectionString("DefaultConnection")!);
     }
@@ -28,12 +37,12 @@ public class Startup
             app.UseExceptionHandler("/Error");
             app.UseHsts();
         }
- 
+        
+        app.UseAuthentication();
         app.UseHttpsRedirection();
         app.UseStaticFiles();
  
         app.UseRouting();
- 
         app.UseAuthorization();
  
         app.UseEndpoints(endpoints =>
