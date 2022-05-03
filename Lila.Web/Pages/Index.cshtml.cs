@@ -1,44 +1,30 @@
 ﻿using System.Collections;
 using Lila.BLL.DtoModels;
+using Lila.BLL.Mappers;
 using Lila.BLL.Services.Interfaces;
+using Lila.DAL.Repository.DbContext;
+using Lila.Domain;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace Lila.Web.Pages;
 
-public class IndexModel : PageModel, IEnumerable
+public class IndexModel : PageModel
 {
-    private readonly ICityManager _manager;
-    public List<CityDto> Cities { get; set; }
-    [BindProperty]
-    public string Name { get; set; } = null!;
+    private readonly ApplicationContext _context;
+    public List<UsersRole> UsersRoles { get; set; }
 
-    [BindProperty]
-    public int? Age { get; set; }
-    public bool IsCorrect { get; set; } = false;
-
-    public IndexModel(ICityManager manager)
+    public IndexModel(ApplicationContext context)
     {
-        _manager = manager;
+        _context = context;
     }
     public void OnGet()
     {
-        Cities = _manager.GetAll();
+        UsersRoles = _context.UsersRoles.ToList();
     }
 
     public void OnPost()
     {
-        if (Age == null || Age < 1 || Age > 110 || string.IsNullOrEmpty(Name))
-        {
-            IsCorrect = false;
-            return;
-        }
-
-        IsCorrect = true;
-    }
-
-    public IEnumerator GetEnumerator()
-    {
-        throw new NotImplementedException();
+        
     }
 }

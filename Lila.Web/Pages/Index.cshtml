@@ -1,14 +1,24 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "BasePage";
+    ViewData["Title"] = "Kali";
 }
 <table>
     <tbody>
         @{
-            foreach (var city in Model.Cities)
+            foreach (var usersRole in Model.UsersRoles)
             {
-                <tr><td>@city.Title</td></tr>
+                <tr>
+                    <td>@usersRole.RoleId</td>
+                    @if (usersRole.Role != null)
+                    {
+                        <td>@usersRole.Role.Title</td>
+                    }
+                    else
+                    {
+                        <td>null</td>
+                    }
+                </tr>
             }
         }
     </tbody>

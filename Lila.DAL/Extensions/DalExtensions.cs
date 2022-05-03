@@ -1,7 +1,6 @@
 using Lila.DAL.Repository;
 using Lila.DAL.Repository.DbContext;
 using Lila.DAL.Repository.Interfaces;
-using Lila.Domain;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 

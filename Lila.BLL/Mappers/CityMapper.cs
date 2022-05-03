@@ -10,7 +10,7 @@ public static class CityMapper
             return new City()
             {
                 Id = item.Id,
-                Title = item.Title!
+                Title = item.Title,
             };
     }
 
@@ -19,7 +19,7 @@ public static class CityMapper
             return new CityDto()
             {
                 Id = item.Id,
-                Title = item.Title
+                Title = item.Title,
             };
     }
 
@@ -28,11 +28,7 @@ public static class CityMapper
         var result = new List<City>();
         foreach (var item in items)
         {
-                result.Add(new City()
-                {
-                    Id = item.Id,
-                    Title = item.Title!
-                });
+            result.Add(CastFromDto(item));
         }
         return result;
     }
@@ -42,11 +38,7 @@ public static class CityMapper
         var result = new List<CityDto>();
         foreach (var item in items)
         {
-                result.Add(new CityDto()
-                {
-                    Id = item.Id,
-                    Title = item.Title
-                });
+            result.Add(CastToDto(item));
         }
         return result;
     }
