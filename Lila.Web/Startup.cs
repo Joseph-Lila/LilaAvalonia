@@ -14,11 +14,11 @@ public class Startup
 
     public void ConfigureServices(IServiceCollection services)
     {
-        services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
-            .AddCookie(options =>
+        services.AddAuthentication("MyCookieAuth")
+            .AddCookie("MyCookieAuth", options =>
             {
-                options.LoginPath = "/LogIn";
-                options.AccessDeniedPath = "/AccessDenied";
+                options.Cookie.Name = "MyCookieAuth";
+                options.LoginPath = "/Account/Login";
             });
 
         services.AddAuthorization();
@@ -37,12 +37,12 @@ public class Startup
             app.UseExceptionHandler("/Error");
             app.UseHsts();
         }
-        
-        app.UseAuthentication();
+
         app.UseHttpsRedirection();
         app.UseStaticFiles();
- 
+
         app.UseRouting();
+        app.UseAuthentication();
         app.UseAuthorization();
  
         app.UseEndpoints(endpoints =>

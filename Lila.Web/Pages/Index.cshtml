@@ -3,23 +3,3 @@
 @{
     ViewData["Title"] = "Kali";
 }
-<table>
-    <tbody>
-        @{
-            foreach (var usersRole in Model.UsersRoles)
-            {
-                <tr>
-                    <td>@usersRole.RoleId</td>
-                    @if (usersRole.Role != null)
-                    {
-                        <td>@usersRole.Role.Title</td>
-                    }
-                    else
-                    {
-                        <td>null</td>
-                    }
-                </tr>
-            }
-        }
-    </tbody>
-</table>
