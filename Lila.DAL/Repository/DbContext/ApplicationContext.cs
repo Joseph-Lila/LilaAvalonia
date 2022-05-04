@@ -55,10 +55,10 @@ public class ApplicationContext : Microsoft.EntityFrameworkCore.DbContext
             new CustomersCity { Id = 3, CityId = 1, CustomerId = 3}
         );
         modelBuilder.Entity<Role>().HasData(
-            new Role { Id = 1, Title = "Клиент", Description = "Заказывает услуги."},
-            new Role { Id = 2, Title = "Директор", Description = "Ведет справочники, прейскурант, наблюдает отчетность."},
-            new Role { Id = 3, Title = "Оператор", Description = "Распределяет оплаченные заказы между курьерами."},
-            new Role { Id = 4, Title = "Курьер", Description = "Выполняет заказы."}
+            new Role { Id = 1, Title = "Customer", Description = "Заказывает услуги."},
+            new Role { Id = 2, Title = "Director", Description = "Ведет справочники, прейскурант, наблюдает отчетность."},
+            new Role { Id = 3, Title = "Operator", Description = "Распределяет оплаченные заказы между курьерами."},
+            new Role { Id = 4, Title = "Courier", Description = "Выполняет заказы."}
         );
         modelBuilder.Entity<UsersRole>().HasData(
             new UsersRole { Id = 1, UserId = 1, RoleId = 2},

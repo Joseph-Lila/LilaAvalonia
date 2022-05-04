@@ -1,5 +1,4 @@
 using Lila.BLL.Services;
-using Lila.BLL.Services.Interfaces;
 using Lila.DAL.Extensions;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -10,5 +9,6 @@ public static class BllExtensions
     public static void ConfigureBllService(this IServiceCollection services, string connectionString)
     {
         services.ConfigureDalServices(connectionString);
+        services.AddScoped<LoginManager>();
     }
 }

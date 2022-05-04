@@ -1,5 +1,6 @@
 using System.Security.Claims;
-using Lila.Web.Models;
+using Lila.BLL.DtoModels;
+using Lila.BLL.Services;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -9,7 +10,16 @@ namespace Lila.Web.Pages.Account;
 public class Login : PageModel
 {
     [BindProperty]
-    public Credential Credential { get; set; }
+    public string LoginValue { get; set; }
+    [BindProperty]
+    public string PasswordValue { get; set; }
+
+    private readonly LoginManager _loginManager;
+
+    public Login(LoginManager loginManager)
+    {
+        _loginManager = loginManager;
+    }
     
     public void OnGet()
     {
@@ -20,23 +30,16 @@ public class Login : PageModel
     {
         if (!ModelState.IsValid) return Page();
         
-        // Verify the credential
-        if (Credential.UsersName == "admin" && Credential.Password == "password")
-        {
-            // Creating the security context
-            var claims = new List<Claim>
-            {
-                new Claim(ClaimTypes.Name, "admin"),
-                new Claim(ClaimTypes.Email, "admin@mywebsite.com"),
-            };
-            var identity = new ClaimsIdentity(claims, "MyCookieAuth");
-            ClaimsPrincipal claimsPrincipal = new ClaimsPrincipal(identity);
+        var claims = _loginManager.GetHisRights(LoginValue, PasswordValue);
+        
+        if (claims == null)
+            return Page();
+       
+        var identity = new ClaimsIdentity(claims, "MyCookieAuth");
+        ClaimsPrincipal claimsPrincipal = new ClaimsPrincipal(identity);
 
-            await HttpContext.SignInAsync("MyCookieAuth", claimsPrincipal);
+        await HttpContext.SignInAsync("MyCookieAuth", claimsPrincipal);
 
-            return RedirectToPage("/Index");
-        }
-
-        return Page();
+        return RedirectToPage("/Index");
     }
 }
