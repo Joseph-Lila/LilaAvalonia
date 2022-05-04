@@ -1,3 +1,4 @@
+using System.ComponentModel.DataAnnotations;
 using System.Security.Claims;
 using Lila.BLL.DtoModels;
 using Lila.BLL.Services;
@@ -10,8 +11,10 @@ namespace Lila.Web.Pages.Account;
 public class Login : PageModel
 {
     [BindProperty]
+    [Required]
     public string LoginValue { get; set; }
     [BindProperty]
+    [Required]
     public string PasswordValue { get; set; }
 
     private readonly LoginManager _loginManager;

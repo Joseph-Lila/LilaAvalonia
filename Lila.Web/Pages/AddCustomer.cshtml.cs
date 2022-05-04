@@ -27,7 +27,6 @@ public class AddCustomer : PageModel
         {
             if (_manager.RegisterCustomer(item))
             {
-                Console.WriteLine("Successfully added!!!");
                 return RedirectToPage("/Account/Login");
             }
         }

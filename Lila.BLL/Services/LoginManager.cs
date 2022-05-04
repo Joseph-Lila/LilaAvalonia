@@ -57,7 +57,7 @@ public class LoginManager
         List<Claim> claims = new List<Claim>();
         
         // add vital claim (it is unique due to Login + Password uniqueness)
-        claims.Add(new Claim(ClaimTypes.Name, he.Login + he.Password));
+        claims.Add(new Claim(ClaimTypes.Name, he.Login));
         // add common claim
         claims.Add(new Claim(ClaimTypes.Email, he.Email));
         

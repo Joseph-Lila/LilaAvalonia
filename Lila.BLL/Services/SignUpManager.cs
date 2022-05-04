@@ -24,14 +24,14 @@ public class SignUpManager
         _cityRep = cityRep;
     }
 
-    private bool CheckExistUser(string login, string password)
+    private bool CheckExistUser(string login)
     {
-        return _userRep.GetAll().Find(x => x.Login == login && x.Password == password) != null;
+        return _userRep.GetAll().Find(x => x.Login == login) != null;
     }
     
     public bool RegisterCustomer(SignUpDto item)
     {
-        if (!CheckExistUser(item.Login, item.Password))
+        if (!CheckExistUser(item.Login))
         {
             // check if city exists
             int? cityId = _cityRep.GetAll().Find(x => x.Title == item.CityTitle)?.Id;
