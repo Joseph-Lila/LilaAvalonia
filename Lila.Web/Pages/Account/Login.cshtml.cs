@@ -40,6 +40,6 @@ public class Login : PageModel
 
         await HttpContext.SignInAsync("MyCookieAuth", claimsPrincipal);
 
-        return RedirectToPage("/Index");
+        return RedirectToPage("/PersonalOffice");
     }
 }
