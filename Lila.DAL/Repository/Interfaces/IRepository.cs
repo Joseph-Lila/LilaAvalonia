@@ -7,7 +7,7 @@ public interface IRepository<T>
 {
     public List<T> GetAll();
     public T GetById(int id);
-    public int Create(T item);
+    public void Create(T item);
     public void Update(T item);
     public void Delete(T item);
 }

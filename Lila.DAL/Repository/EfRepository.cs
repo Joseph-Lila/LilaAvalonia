@@ -26,11 +26,10 @@ internal class EfRepository<TEntity> : IRepository<TEntity>
             .FirstOrDefault(e => e.Id == id)!;
     }
 
-    public int Create(TEntity item)
+    public void Create(TEntity item)
     {
         _dbContext.Set<TEntity>().Add(item);
         _dbContext.SaveChanges();
-        return item.Id;
     }
 
     public void Update(TEntity item)

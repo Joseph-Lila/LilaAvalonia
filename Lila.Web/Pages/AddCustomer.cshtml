@@ -1,0 +1,24 @@
+@page
+@model Lila.Web.Pages.AddCustomer
+
+@{
+    ViewData["Title"] = "Добавление нового пользователя";
+}
+
+<h2>@ViewData["Title"]</h2>
+<div asp-validation-summary="All"></div>
+<form method="POST">
+    <div><label>Country</label><br /><input asp-for="item.Country" /></div>
+    <div><label>CityTitle</label><br /><input asp-for="item.CityTitle" /></div>
+    <div><label>Street</label><br /><input asp-for="item.Street" /></div>
+    <div><label>HomeNumber</label><br /><input asp-for="item.HomeNumber" type="number" /></div>
+    <div><label>FlatNumber</label><br /><input asp-for="item.FlatNumber" type="number" /></div>
+    <div><label>LastName</label><br /><input asp-for="item.LastName" /></div>
+    <div><label>Name</label><br /><input asp-for="item.Name" /></div>
+    <div><label>MiddleName</label><br /><input asp-for="item.MiddleName" /></div>
+    <div><label>Login</label><br /><input asp-for="item.Login" /></div>
+    <div><label>Password</label><br /><input asp-for="item.Password" /></div>
+    <div><label>Email</label><br /><input asp-for="item.Email" /></div>
+    <div><label>PhoneNumber</label><br /><input asp-for="item.PhoneNumber" /></div>
+    <input type="submit" value="Отправить" />
+</form>
