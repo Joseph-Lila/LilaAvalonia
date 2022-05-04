@@ -64,7 +64,6 @@ public class LoginManager
         // add particular claims affecting pages access
         foreach (var role in he.Roles)
         {
-            Console.WriteLine(role);
             claims.Add(new Claim(role, "true"));
         }
 
