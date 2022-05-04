@@ -10,12 +10,18 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace Lila.Web.Pages;
 
-[Authorize]
 public class IndexModel : PageModel
 {
-    public void OnGet()
-    
+    private readonly ICityManager _cityManager;
+    public List<CityDto> Cities { get; set; }
+
+    public IndexModel(ICityManager cityManager)
     {
-        
+        _cityManager = cityManager;
+    }
+    
+    public void OnGet()
+    {
+        Cities = _cityManager.GetAll();
     }
 }

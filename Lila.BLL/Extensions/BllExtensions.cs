@@ -10,6 +10,6 @@ public static class BllExtensions
     public static void ConfigureBllService(this IServiceCollection services, string connectionString)
     {
         services.ConfigureDalServices(connectionString);
-        services.AddScoped<ICityManager, CityManager>();
+        services.AddScoped<ICustomerManager, CustomerManager>();
     }
 }

@@ -1,5 +1,4 @@
 using Lila.BLL.Extensions;
-using Microsoft.AspNetCore.Authentication.Cookies;
 
 namespace Lila.Web;
 
@@ -19,9 +18,20 @@ public class Startup
             {
                 options.Cookie.Name = "MyCookieAuth";
                 options.LoginPath = "/Account/Login";
+                options.AccessDeniedPath = "/Account/AccessDenied";
             });
 
-        services.AddAuthorization();
+        services.AddAuthorization(options =>
+        {
+            options.AddPolicy("ForCourier",
+                policy => policy.RequireClaim("Courier"));
+            options.AddPolicy("ForDirector",
+                policy => policy.RequireClaim("Director"));
+            options.AddPolicy("ForOperator",
+                policy => policy.RequireClaim("Operator"));
+            options.AddPolicy("ForCustomer",
+                policy => policy.RequireClaim("Customer"));
+        });
         services.AddRazorPages();
         services.ConfigureBllService(Configuration.GetConnectionString("DefaultConnection")!);
     }
