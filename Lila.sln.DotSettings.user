@@ -5,4 +5,6 @@
   &lt;PhysicalFolder Path="/home/lila/.nuget/packages/microsoft.entityframeworkcore/5.0.5" Loaded="True" /&gt;
   &lt;PhysicalFolder Path="/home/lila/.nuget/packages/microsoft.entityframeworkcore/5.0.6" Loaded="True" /&gt;
   &lt;PhysicalFolder Path="/home/lila/.nuget/packages/microsoft.entityframeworkcore/7.0.0-preview.3.22175.1" Loaded="True" /&gt;
-&lt;/AssemblyExplorer&gt;</s:String></wpf:ResourceDictionary>
+&lt;/AssemblyExplorer&gt;</s:String>
+	<s:Boolean x:Key="/Default/UserDictionary/Words/=_043E_043F_043B_0430_0447_0435_043D/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/UserDictionary/Words/=_0440_0430_0441_0441_043C_043E_0442_0440_0435_043D_0438_0438/@EntryIndexedValue">True</s:Boolean></wpf:ResourceDictionary>

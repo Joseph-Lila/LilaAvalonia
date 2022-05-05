@@ -10,4 +10,8 @@
       <ProjectReference Include="..\Lila.BLL\Lila.BLL.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="Pages\PersonalOffice\DoOrder.cshtml" />
+    </ItemGroup>
+
 </Project>
