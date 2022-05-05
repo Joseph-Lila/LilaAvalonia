@@ -13,4 +13,8 @@ public class User : IBaseEntity
     public string Password { get; set; } = "";
     public string Email { get; set; } = "";
     public string PhoneNumber { get; set; } = "";
+    // ---
+    public List<UsersRole> UsersRoles { get; set; } = new();
+    public List<Customer> Customers { get; set; } = new();
+    public List<Employee> Employees { get; set; } = new();
 }

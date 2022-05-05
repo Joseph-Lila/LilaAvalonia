@@ -9,8 +9,10 @@ public class UsersRole : IBaseEntity
 {
     [Key]
     public int Id { get; set; }
-    public int UserId { get; set; } // FK
-    public User? User { get; set; } // nav. property
-    public int RoleId { get; set; } // FK
-    public Role? Role { get; set; } // nav. property
+    // ---
+    public int UserId { get; set; }
+    public User? User { get; set; }
+    // ---
+    public int RoleId { get; set; }
+    public Role? Role { get; set; }
 }

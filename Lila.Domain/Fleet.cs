@@ -14,6 +14,9 @@ public class Fleet : IBaseEntity
     public string Address { get; set; } = "";
     public double Square { get; set; }
     public int StarsQuantity { get; set; }
-    public int CityId { get; set; } // FK
-    public City? City { get; set; } // nav. property
+    // ---
+    public int CityId { get; set; }
+    public City? City { get; set; }
+    // ---
+    public List<Transport> Transports { get; set; } = new();
 }

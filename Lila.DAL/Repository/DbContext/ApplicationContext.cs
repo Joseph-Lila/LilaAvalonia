@@ -24,8 +24,8 @@ public class ApplicationContext : Microsoft.EntityFrameworkCore.DbContext
 
     public ApplicationContext(DbContextOptions<ApplicationContext> options) : base(options)
     {
-        // Database.EnsureDeleted();
-        // Database.EnsureCreated();   // создаем базу данных при первом обращении
+        Database.EnsureDeleted();
+        Database.EnsureCreated();   // создаем базу данных при первом обращении
     }
     
     protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -93,10 +93,10 @@ public class ApplicationContext : Microsoft.EntityFrameworkCore.DbContext
             new Fleet {Id = 2, Title = "ПА-2", Description = "description2", Address = "street2", Square = 100, StarsQuantity = 3, CityId = 1}
         );
         modelBuilder.Entity<Transport>().HasData(
-            new Transport { Id = 1, KindId = 1, FleetId = 1},
-            new Transport { Id = 2, KindId = 3, FleetId = 2},
-            new Transport { Id = 3, KindId = 2, FleetId = 1},
-            new Transport { Id = 4, KindId = 4, FleetId = 2}
+            new Transport { Id = 1, TransportsKindId = 1, FleetId = 1},
+            new Transport { Id = 2, TransportsKindId = 3, FleetId = 2},
+            new Transport { Id = 3, TransportsKindId = 2, FleetId = 1},
+            new Transport { Id = 4, TransportsKindId = 4, FleetId = 2}
         );
         modelBuilder.Entity<Service>().HasData(
             new Service { Id = 1, Title = "Перевозка сборных грузов", Description = "description1", CostWeight = 5, CostRadius = 5},

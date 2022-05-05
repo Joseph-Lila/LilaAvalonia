@@ -13,4 +13,6 @@ public class TransportsKind : IBaseEntity
     public string Title { get; set; } = "";
     public double LiftingCapacity { get; set; }
     public double Volume { get; set; }
+    // ---
+    public List<Transport> Transports { get; set; } = new();
 }

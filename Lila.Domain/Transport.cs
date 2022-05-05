@@ -9,8 +9,11 @@ public class Transport : IBaseEntity
 {
     [Key]
     public int Id { get; set; }
-    public int KindId { get; set; } // FK
-    public TransportsKind? Kind { get; set; } // nav. property
-    public int FleetId { get; set; } // FK
-    public Fleet? Fleet { get; set; } // nav. property
+    // ---
+    public int TransportsKindId { get; set; }
+    public TransportsKind? TransportsKind { get; set; }
+    public int FleetId { get; set; }
+    public Fleet? Fleet { get; set; }
+    // ---
+    public List<OrdersTransport> OrdersTransports { get; set; } = new();
 }

@@ -1327,43 +1327,43 @@
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="495" parent="474" name="UserId">
-      <DataType>INTEGER|0s</DataType>
+    <column id="495" parent="474" name="Country">
+      <DataType>TEXT|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="496" parent="474" name="Country">
+    <column id="496" parent="474" name="Street">
       <DataType>TEXT|0s</DataType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="497" parent="474" name="Street">
-      <DataType>TEXT|0s</DataType>
+    <column id="497" parent="474" name="HomeNumber">
+      <DataType>INTEGER|0s</DataType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <column id="498" parent="474" name="HomeNumber">
+    <column id="498" parent="474" name="FlatNumber">
       <DataType>INTEGER|0s</DataType>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
-    <column id="499" parent="474" name="FlatNumber">
-      <DataType>INTEGER|0s</DataType>
+    <column id="499" parent="474" name="LastName">
+      <DataType>TEXT|0s</DataType>
       <NotNull>1</NotNull>
       <Position>6</Position>
     </column>
-    <column id="500" parent="474" name="LastName">
+    <column id="500" parent="474" name="Name">
       <DataType>TEXT|0s</DataType>
       <NotNull>1</NotNull>
       <Position>7</Position>
     </column>
-    <column id="501" parent="474" name="Name">
+    <column id="501" parent="474" name="MiddleName">
       <DataType>TEXT|0s</DataType>
       <NotNull>1</NotNull>
       <Position>8</Position>
     </column>
-    <column id="502" parent="474" name="MiddleName">
-      <DataType>TEXT|0s</DataType>
+    <column id="502" parent="474" name="UserId">
+      <DataType>INTEGER|0s</DataType>
       <NotNull>1</NotNull>
       <Position>9</Position>
     </column>
@@ -1427,28 +1427,28 @@
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="515" parent="476" name="UserId">
-      <DataType>INTEGER|0s</DataType>
+    <column id="515" parent="476" name="PassportData">
+      <DataType>TEXT|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="516" parent="476" name="PassportData">
-      <DataType>TEXT|0s</DataType>
+    <column id="516" parent="476" name="Salary">
+      <DataType>REAL|0s</DataType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="517" parent="476" name="Salary">
-      <DataType>REAL|0s</DataType>
+    <column id="517" parent="476" name="Requirements">
+      <DataType>TEXT|0s</DataType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <column id="518" parent="476" name="Requirements">
+    <column id="518" parent="476" name="Duties">
       <DataType>TEXT|0s</DataType>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
-    <column id="519" parent="476" name="Duties">
-      <DataType>TEXT|0s</DataType>
+    <column id="519" parent="476" name="UserId">
+      <DataType>INTEGER|0s</DataType>
       <NotNull>1</NotNull>
       <Position>6</Position>
     </column>
@@ -1545,15 +1545,15 @@
       <DataType>TEXT|0s</DataType>
       <Position>3</Position>
     </column>
-    <column id="539" parent="478" name="CustomerId">
+    <column id="539" parent="478" name="OperatorId">
       <DataType>INTEGER|0s</DataType>
       <Position>4</Position>
     </column>
-    <column id="540" parent="478" name="OperatorId">
+    <column id="540" parent="478" name="CourierId">
       <DataType>INTEGER|0s</DataType>
       <Position>5</Position>
     </column>
-    <column id="541" parent="478" name="CourierId">
+    <column id="541" parent="478" name="CustomerId">
       <DataType>INTEGER|0s</DataType>
       <Position>6</Position>
     </column>
@@ -1602,38 +1602,38 @@
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="552" parent="479" name="ServiceId">
-      <DataType>INTEGER|0s</DataType>
+    <column id="552" parent="479" name="QuantityWeight">
+      <DataType>REAL|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="553" parent="479" name="MyOrderId">
-      <DataType>INTEGER|0s</DataType>
+    <column id="553" parent="479" name="QuantityRadius">
+      <DataType>REAL|0s</DataType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="554" parent="479" name="QuantityWeight">
-      <DataType>REAL|0s</DataType>
+    <column id="554" parent="479" name="DestinationsAddress">
+      <DataType>TEXT|0s</DataType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <column id="555" parent="479" name="QuantityRadius">
-      <DataType>REAL|0s</DataType>
+    <column id="555" parent="479" name="DeparturesAddress">
+      <DataType>TEXT|0s</DataType>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
-    <column id="556" parent="479" name="DestinationsAddress">
-      <DataType>TEXT|0s</DataType>
+    <column id="556" parent="479" name="TotalCost">
+      <DataType>REAL|0s</DataType>
       <NotNull>1</NotNull>
       <Position>6</Position>
     </column>
-    <column id="557" parent="479" name="DeparturesAddress">
-      <DataType>TEXT|0s</DataType>
+    <column id="557" parent="479" name="MyOrderId">
+      <DataType>INTEGER|0s</DataType>
       <NotNull>1</NotNull>
       <Position>7</Position>
     </column>
-    <column id="558" parent="479" name="TotalCost">
-      <DataType>REAL|0s</DataType>
+    <column id="558" parent="479" name="ServiceId">
+      <DataType>INTEGER|0s</DataType>
       <NotNull>1</NotNull>
       <Position>8</Position>
     </column>
@@ -1647,19 +1647,19 @@
       <NotNull>1</NotNull>
       <Position>10</Position>
     </column>
-    <foreign-key id="561" parent="479" name="FK_OrdersServices_Services_ServiceId">
-      <ColNames>ServiceId</ColNames>
-      <OnDelete>cascade</OnDelete>
-      <RefColNames>Id</RefColNames>
-      <RefKeyName>PK_Services</RefKeyName>
-      <RefTableName>Services</RefTableName>
-    </foreign-key>
-    <foreign-key id="562" parent="479" name="FK_OrdersServices_MyOrders_MyOrderId">
+    <foreign-key id="561" parent="479" name="FK_OrdersServices_MyOrders_MyOrderId">
       <ColNames>MyOrderId</ColNames>
       <OnDelete>cascade</OnDelete>
       <RefColNames>Id</RefColNames>
       <RefKeyName>PK_MyOrders</RefKeyName>
       <RefTableName>MyOrders</RefTableName>
+    </foreign-key>
+    <foreign-key id="562" parent="479" name="FK_OrdersServices_Services_ServiceId">
+      <ColNames>ServiceId</ColNames>
+      <OnDelete>cascade</OnDelete>
+      <RefColNames>Id</RefColNames>
+      <RefKeyName>PK_Services</RefKeyName>
+      <RefTableName>Services</RefTableName>
     </foreign-key>
     <foreign-key id="563" parent="479" name="FK_OrdersServices_Cities_BeginCityId">
       <ColNames>BeginCityId</ColNames>
@@ -1675,11 +1675,11 @@
       <RefKeyName>PK_Cities</RefKeyName>
       <RefTableName>Cities</RefTableName>
     </foreign-key>
-    <index id="565" parent="479" name="IX_OrdersServices_ServiceId">
-      <ColNames>ServiceId</ColNames>
-    </index>
-    <index id="566" parent="479" name="IX_OrdersServices_MyOrderId">
+    <index id="565" parent="479" name="IX_OrdersServices_MyOrderId">
       <ColNames>MyOrderId</ColNames>
+    </index>
+    <index id="566" parent="479" name="IX_OrdersServices_ServiceId">
+      <ColNames>ServiceId</ColNames>
     </index>
     <index id="567" parent="479" name="IX_OrdersServices_BeginCityId">
       <ColNames>BeginCityId</ColNames>
@@ -1827,7 +1827,7 @@
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="597" parent="485" name="KindId">
+    <column id="597" parent="485" name="TransportsKindId">
       <DataType>INTEGER|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
@@ -1837,8 +1837,8 @@
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <foreign-key id="599" parent="485" name="FK_Transports_TransportsKinds_KindId">
-      <ColNames>KindId</ColNames>
+    <foreign-key id="599" parent="485" name="FK_Transports_TransportsKinds_TransportsKindId">
+      <ColNames>TransportsKindId</ColNames>
       <OnDelete>cascade</OnDelete>
       <RefColNames>Id</RefColNames>
       <RefKeyName>PK_TransportsKinds</RefKeyName>
@@ -1851,8 +1851,8 @@
       <RefKeyName>PK_Fleets</RefKeyName>
       <RefTableName>Fleets</RefTableName>
     </foreign-key>
-    <index id="601" parent="485" name="IX_Transports_KindId">
-      <ColNames>KindId</ColNames>
+    <index id="601" parent="485" name="IX_Transports_TransportsKindId">
+      <ColNames>TransportsKindId</ColNames>
     </index>
     <index id="602" parent="485" name="IX_Transports_FleetId">
       <ColNames>FleetId</ColNames>
@@ -1887,104 +1887,117 @@
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
-    <key id="609" parent="486" name="PK_TransportsKinds">
+    <column id="609" parent="486" name="TransportsKindId">
+      <DataType>INTEGER|0s</DataType>
+      <Position>6</Position>
+    </column>
+    <foreign-key id="610" parent="486" name="FK_TransportsKinds_TransportsKinds_TransportsKindId">
+      <ColNames>TransportsKindId</ColNames>
+      <RefColNames>Id</RefColNames>
+      <RefKeyName>PK_TransportsKinds</RefKeyName>
+      <RefTableName>TransportsKinds</RefTableName>
+    </foreign-key>
+    <index id="611" parent="486" name="IX_TransportsKinds_TransportsKindId">
+      <ColNames>TransportsKindId</ColNames>
+    </index>
+    <key id="612" parent="486" name="PK_TransportsKinds">
       <ColNames>Id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="610" parent="487" name="Id">
+    <column id="613" parent="487" name="Id">
       <AutoIncrement>1</AutoIncrement>
       <DataType>INTEGER|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="611" parent="487" name="Login">
+    <column id="614" parent="487" name="Login">
       <DataType>TEXT|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="612" parent="487" name="Password">
+    <column id="615" parent="487" name="Password">
       <DataType>TEXT|0s</DataType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="613" parent="487" name="Email">
+    <column id="616" parent="487" name="Email">
       <DataType>TEXT|0s</DataType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <column id="614" parent="487" name="PhoneNumber">
+    <column id="617" parent="487" name="PhoneNumber">
       <DataType>TEXT|0s</DataType>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
-    <key id="615" parent="487" name="PK_Users">
+    <key id="618" parent="487" name="PK_Users">
       <ColNames>Id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="616" parent="488" name="Id">
+    <column id="619" parent="488" name="Id">
       <AutoIncrement>1</AutoIncrement>
       <DataType>INTEGER|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="617" parent="488" name="UserId">
+    <column id="620" parent="488" name="UserId">
       <DataType>INTEGER|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="618" parent="488" name="RoleId">
+    <column id="621" parent="488" name="RoleId">
       <DataType>INTEGER|0s</DataType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <foreign-key id="619" parent="488" name="FK_UsersRoles_Users_UserId">
+    <foreign-key id="622" parent="488" name="FK_UsersRoles_Users_UserId">
       <ColNames>UserId</ColNames>
       <OnDelete>cascade</OnDelete>
       <RefColNames>Id</RefColNames>
       <RefKeyName>PK_Users</RefKeyName>
       <RefTableName>Users</RefTableName>
     </foreign-key>
-    <foreign-key id="620" parent="488" name="FK_UsersRoles_Roles_RoleId">
+    <foreign-key id="623" parent="488" name="FK_UsersRoles_Roles_RoleId">
       <ColNames>RoleId</ColNames>
       <OnDelete>cascade</OnDelete>
       <RefColNames>Id</RefColNames>
       <RefKeyName>PK_Roles</RefKeyName>
       <RefTableName>Roles</RefTableName>
     </foreign-key>
-    <index id="621" parent="488" name="IX_UsersRoles_UserId">
+    <index id="624" parent="488" name="IX_UsersRoles_UserId">
       <ColNames>UserId</ColNames>
     </index>
-    <index id="622" parent="488" name="IX_UsersRoles_RoleId">
+    <index id="625" parent="488" name="IX_UsersRoles_RoleId">
       <ColNames>RoleId</ColNames>
     </index>
-    <key id="623" parent="488" name="PK_UsersRoles">
+    <key id="626" parent="488" name="PK_UsersRoles">
       <ColNames>Id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="624" parent="489" name="type">
+    <column id="627" parent="489" name="type">
       <DataType>text|0s</DataType>
       <Position>1</Position>
     </column>
-    <column id="625" parent="489" name="name">
+    <column id="628" parent="489" name="name">
       <DataType>text|0s</DataType>
       <Position>2</Position>
     </column>
-    <column id="626" parent="489" name="tbl_name">
+    <column id="629" parent="489" name="tbl_name">
       <DataType>text|0s</DataType>
       <Position>3</Position>
     </column>
-    <column id="627" parent="489" name="rootpage">
+    <column id="630" parent="489" name="rootpage">
       <DataType>int|0s</DataType>
       <Position>4</Position>
     </column>
-    <column id="628" parent="489" name="sql">
+    <column id="631" parent="489" name="sql">
       <DataType>text|0s</DataType>
       <Position>5</Position>
     </column>
-    <column id="629" parent="490" name="name">
+    <column id="632" parent="490" name="name">
       <Position>1</Position>
     </column>
-    <column id="630" parent="490" name="seq">
+    <column id="633" parent="490" name="seq">
       <Position>2</Position>
     </column>
   </database-model>

@@ -9,8 +9,6 @@ public class Customer : IBaseEntity
 {
     [Key]
     public int Id { get; set; }
-    public int UserId { get; set; } // FK
-    public User? User { get; set; } // nav. property
     public string Country { get; set; } = "";
     public string Street { get; set; } = "";
     public int HomeNumber { get; set; }
@@ -18,4 +16,10 @@ public class Customer : IBaseEntity
     public string LastName { get; set; } = "";
     public string Name { get; set; } = "";
     public string MiddleName { get; set; } = "";
+    // ---
+    public int UserId { get; set; }
+    public User? User { get; set; }
+    // ---
+    public List<CustomersCity> CustomersCities { get; set; } = new();
+    public List<MyOrder> MyOrders { get; set; } = new();
 }
