@@ -24,21 +24,30 @@ public class UsersRoleRepository : IRepository<UsersRole>
 
     public UsersRole GetById(int id)
     {
-        throw new NotImplementedException();
+        return _dbContext.Set<UsersRole>()
+            .Include(usersRole => usersRole.User)
+            .Include(usersRole => usersRole.Role)
+            .AsNoTracking()
+            .ToList()
+            .FirstOrDefault(usersRole => usersRole.Id == id)!;
     }
 
     public int Create(UsersRole item)
     {
-        throw new NotImplementedException();
+        _dbContext.Set<UsersRole>().Add(item);
+        _dbContext.SaveChanges();
+        return item.Id;
     }
 
     public void Update(UsersRole item)
     {
-        throw new NotImplementedException();
+        _dbContext.Set<UsersRole>().Update(item);
+        _dbContext.SaveChanges();
     }
 
     public void Delete(UsersRole item)
     {
-        throw new NotImplementedException();
+        _dbContext.Set<UsersRole>().Remove(item);
+        _dbContext.SaveChanges();
     }
 }

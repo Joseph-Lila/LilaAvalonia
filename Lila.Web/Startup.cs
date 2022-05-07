@@ -32,6 +32,8 @@ public class Startup
             options.AddPolicy("ForCustomer",
                 policy => policy.RequireClaim("Customer"));
         });
+        services.AddDistributedMemoryCache();
+        services.AddSession();
         services.AddRazorPages();
         services.ConfigureBllService(Configuration.GetConnectionString("DefaultConnection")!);
     }
@@ -49,6 +51,8 @@ public class Startup
         }
 
         app.UseHttpsRedirection();
+        app.UseSession();
+        app.UseDefaultFiles();
         app.UseStaticFiles();
 
         app.UseRouting();

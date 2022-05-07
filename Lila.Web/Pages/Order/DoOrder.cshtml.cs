@@ -1,6 +1,5 @@
+using Lila.BLL.DtoModels;
 using Lila.BLL.Services;
-using Lila.Domain;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace Lila.Web.Pages.Order;
@@ -8,7 +7,8 @@ namespace Lila.Web.Pages.Order;
 public class DoOrder : PageModel
 {
     private readonly OrderManager _manager;
-    public List<OrdersService>? OrdersServices { get; set; }
+    private const string CartKey = "cartStore";
+    public List<ShopCartItemDto> ShopCartItems { get; set; } = new();
 
     public DoOrder(OrderManager manager)
     {
@@ -17,14 +17,12 @@ public class DoOrder : PageModel
 
     public void OnGet()
     {
-        OrdersServices = _manager.MainEntity.Services;
+        if (!HttpContext.Session.Keys.Contains(CartKey))
+        {
+            HttpContext.Session.SetString(CartKey, _manager.CartJsonString());
+        }
+        _manager.UpdateCartByJsonString(HttpContext.Session.GetString(CartKey)!);
+        ShopCartItems = _manager.Cart.ShopCartItems;
     }
     
-    // public IActionResult OnPostDeleteAsync(string serviceTitle, double totalCost, 
-    //     string destinationsAddress, string departuresAddress)
-    // {
-    //     _manager.RemoveService(serviceTitle, totalCost, destinationsAddress, departuresAddress);
-    //
-    //     return RedirectToPage();
-    // }
 }

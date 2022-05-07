@@ -1,8 +1,13 @@
 @page
+@using Microsoft.AspNetCore.Server.Kestrel.Core
 @model Lila.Web.Pages.Order.DoOrder
 
 @{
     ViewData["Title"] = "Cart";
 }
 <h2>@ViewData["Title"]</h2>
- 
+
+@foreach (var item in Model.ShopCartItems)
+{
+    <h2>@item.ShopCartId</h2>
+}
