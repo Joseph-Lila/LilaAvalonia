@@ -1,3 +1,92 @@
-@page
+@page "{id:int}"
+@using Lila.Domain
 @model Lila.Web.Pages.Order.AddOrdersService
 
+<h2>Add service</h2>
+
+<form method="post">
+    <div asp-validation-summary="All"></div>
+    <div>
+        <label>Наименование услуги</label>
+        <div>
+            <input asp-for="OrdersService.Service.Title" />
+            <span asp-validation-for="OrdersService.Service.Title"></span>
+        </div>
+    </div>
+    <div>
+        <label>Описание услуги</label>
+        <div>
+            <input asp-for="OrdersService.Service.Description" />
+            <span asp-validation-for="OrdersService.Service.Description"></span>
+        </div>
+    </div>
+    <div>
+        <label>Стоимость за единицу веса</label>
+        <div>
+            <input asp-for="OrdersService.Service.CostWeight" type="number"/>
+            <span asp-validation-for="OrdersService.Service.CostWeight"></span>
+        </div>
+    </div>
+    <div>
+        <label>Стоимость за единицу расстояния</label>
+        <div>
+            <input asp-for="OrdersService.Service.CostRadius" type="number"/>
+            <span asp-validation-for="OrdersService.Service.CostRadius"></span>
+        </div>
+    </div>
+    <div>
+        <label>Вес</label>
+        <div>
+            <input asp-for="OrdersService.QuantityWeight" type="number"/>
+            <span asp-validation-for="OrdersService.QuantityWeight"></span>
+        </div>
+    </div>
+    <div>
+        <label>Расстояние</label>
+        <div>
+            <input asp-for="OrdersService.QuantityRadius" type="number"/>
+            <span asp-validation-for="OrdersService.QuantityRadius"></span>
+        </div>
+    </div>
+    <div>
+        <label>Город отправления</label>
+        <div>
+            <select>
+                @foreach (var city in Model.Cities)
+                {
+                    <option value="@city.Title">@city.Title</option>
+                }
+            </select>
+        </div>
+    </div>
+    <div>
+        <label>Пункт отправления</label>
+        <div>
+            <input asp-for="OrdersService.DeparturesAddress"/>
+            <span asp-validation-for="OrdersService.DeparturesAddress"></span>
+        </div>
+    </div>
+    <div>
+        <label>Город назначения</label>
+        <div>
+            <select>
+                @foreach (var city in Model.Cities)
+                {
+                    <option value="@city.Title">
+                        @city.Title
+                    </option>
+                }
+            </select>
+        </div>
+    </div>
+    <div>
+        <label>Пункт назначения</label>
+        <div>
+            <input asp-for="OrdersService.DestinationsAddress"/>
+            <span asp-validation-for="OrdersService.DestinationsAddress"></span>
+        </div>
+    </div>
+    <div>
+        <input type="submit" value="Сохранить"/>
+    </div>
+</form>

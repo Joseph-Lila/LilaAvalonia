@@ -29,6 +29,22 @@ public class OrderManager
         Cart = new OrderDto();
     }
 
+    public void AddOrdersService(OrdersService item)
+    {
+        ShopCartItemDto newItem = new ShopCartItemDto
+            {OrderDto = null, OrderDtoId = Cart.Id, OrdersService = item, ShopCartId = GetNextServiceId()};
+        Cart.ShopCartItems.Add(newItem);
+    }
+
+    private int GetNextServiceId()
+    {
+        if (Cart.ShopCartItems.Count == 0)
+        {
+            return 1;
+        }
+        return Cart.ShopCartItems.Max(x => x.ShopCartId) + 1;
+    }
+    
     public string CartJsonString()
     {
         return JsonSerializer.Serialize(Cart);

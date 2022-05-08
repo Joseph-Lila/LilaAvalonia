@@ -1,0 +1,14 @@
+@page
+@model Lila.Web.Pages.Order.ServicesList
+
+<table class="table">
+    <thead>
+    <tr><th>Наименование услуги</th></tr>
+    </thead>
+    <tbody>
+    @foreach (var service in Model.Services)
+    {
+        <tr><td><a asp-page="AddOrdersService" asp-route-id="@service.Id">@service.Title</a></td></tr>
+    }
+    </tbody>
+</table>

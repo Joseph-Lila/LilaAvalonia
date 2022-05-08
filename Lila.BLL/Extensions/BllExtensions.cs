@@ -11,5 +11,8 @@ public static class BllExtensions
         services.ConfigureDalServices(connectionString);
         services.AddScoped<LoginManager>();
         services.AddScoped<SignUpManager>();
+        services.AddScoped<OrderManager>();
+        services.AddScoped<ServiceManager>();
+        services.AddScoped<CityManager>();
     }
 }

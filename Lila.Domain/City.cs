@@ -9,6 +9,7 @@ public class City : IBaseEntity
 {
     [Key]
     public int Id { get; set; }
+    [Required]
     public string Title { get; set; } = "";
     // ---
     public List<Fleet> Fleets { get; set; } = new();

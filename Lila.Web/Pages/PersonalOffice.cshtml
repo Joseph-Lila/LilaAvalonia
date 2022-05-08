@@ -7,3 +7,8 @@
 {
     <h1>Operator was founded!!!</h1>
 }
+
+@if (User.Claims.ToList().Find(claim => claim.Type == "Customer") != null)
+{
+    <a href="@Url.Page("/Order/ServicesList")">Services List</a>
+}
