@@ -24,4 +24,5 @@ public class MyOrder : IBaseEntity
     public Status? Status { get; set; }
     // ---
     public List<OrdersTransport> OrdersTransports { get; set; } = new();
+    public List<OrdersService> OrdersServices { get; set; } = new();
 }

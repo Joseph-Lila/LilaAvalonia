@@ -1,4 +1,5 @@
 @page
+@using Microsoft.AspNetCore.Server.Kestrel.Core
 @model Lila.Web.Pages.Order.DoOrder
 
 @{
@@ -9,5 +10,11 @@
 @foreach (var item in Model.ShopCartItems)
 {
     <h2>@item.ShopCartId</h2>
-    <h3>@item.OrdersService.Service.Title</h3>
+    <h3>@item.OrdersService.TotalCost</h3>
 }
+
+<form method="post" class="text-center container">
+    <input type="submit" value="Сохранить"/>
+</form>
+
+

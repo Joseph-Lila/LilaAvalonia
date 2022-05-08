@@ -1,10 +1,20 @@
 @page "{id:int}"
-@using Lila.Domain
 @model Lila.Web.Pages.Order.AddOrdersService
 
 <h2>Add service</h2>
 
-<form method="post">
+<script >
+function abba() {
+    var costWeight = document.getElementById("costWeight");
+    var costRadius = document.getElementById("costRadius");
+    var weight = document.getElementById("weight");
+    var radius = document.getElementById("radius");
+    var totalCost = document.getElementById("totalCost");
+    totalCost.value = costWeight.value * weight.value + costRadius.value * radius.value;
+    }
+</script>
+
+<form method="post" class="text-center container">
     <div asp-validation-summary="All"></div>
     <div>
         <label>Наименование услуги</label>
@@ -23,39 +33,35 @@
     <div>
         <label>Стоимость за единицу веса</label>
         <div>
-            <input asp-for="OrdersService.Service.CostWeight" type="number"/>
+            <input asp-for="OrdersService.Service.CostWeight" id="costWeight" type="float"/>
             <span asp-validation-for="OrdersService.Service.CostWeight"></span>
         </div>
     </div>
     <div>
         <label>Стоимость за единицу расстояния</label>
         <div>
-            <input asp-for="OrdersService.Service.CostRadius" type="number"/>
+            <input asp-for="OrdersService.Service.CostRadius" id="costRadius" type="float"/>
             <span asp-validation-for="OrdersService.Service.CostRadius"></span>
         </div>
     </div>
     <div>
         <label>Вес</label>
         <div>
-            <input asp-for="OrdersService.QuantityWeight" type="number"/>
+            <input asp-for="OrdersService.QuantityWeight" onchange="abba()" type="float" id="weight"/>
             <span asp-validation-for="OrdersService.QuantityWeight"></span>
         </div>
     </div>
     <div>
         <label>Расстояние</label>
         <div>
-            <input asp-for="OrdersService.QuantityRadius" type="number"/>
+            <input asp-for="OrdersService.QuantityRadius" onchange="abba()" type="float" id="radius"/>
             <span asp-validation-for="OrdersService.QuantityRadius"></span>
         </div>
     </div>
     <div>
         <label>Город отправления</label>
         <div>
-            <select>
-                @foreach (var city in Model.Cities)
-                {
-                    <option value="@city.Title">@city.Title</option>
-                }
+            <select asp-for="BeginCityTitle" asp-items="Model.CityList">
             </select>
         </div>
     </div>
@@ -69,13 +75,7 @@
     <div>
         <label>Город назначения</label>
         <div>
-            <select>
-                @foreach (var city in Model.Cities)
-                {
-                    <option value="@city.Title">
-                        @city.Title
-                    </option>
-                }
+            <select asp-for="EndCityTitle" asp-items="Model.CityList">
             </select>
         </div>
     </div>
@@ -84,6 +84,13 @@
         <div>
             <input asp-for="OrdersService.DestinationsAddress"/>
             <span asp-validation-for="OrdersService.DestinationsAddress"></span>
+        </div>
+    </div>
+    <div>
+        <label>Общая стоимость</label>
+        <div>
+            <input asp-for="OrdersService.TotalCost" id="totalCost" readonly="readonly"/>
+            <span asp-validation-for="OrdersService.TotalCost"></span>
         </div>
     </div>
     <div>

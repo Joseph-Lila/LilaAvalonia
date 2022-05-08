@@ -28,8 +28,44 @@ public class OrderManager
         _stageRep = stageRep;
         Cart = new OrderDto();
     }
-
-    public void AddOrdersService(OrdersService item)
+    public void AddFullOrder(string login, List<ShopCartItemDto> shopCartItems)
+    {
+        int customerId = _userRep.GetAll().Find(x => x.Login == login)!.Id;
+        int myOrderId = AddMyOrder(customerId);
+        MyOrder myOrder = _myOrderRep.GetById(myOrderId);
+        foreach (var item in shopCartItems)
+        {
+            int id = _ordersServiceRep.Create(new OrdersService
+            {
+                MyOrderId = myOrderId,
+                BeginCityId = item.OrdersService.BeginCityId,
+                EndCityId = item.OrdersService.EndCityId,
+                DeparturesAddress = item.OrdersService.DeparturesAddress,
+                DestinationsAddress = item.OrdersService.DestinationsAddress,
+                QuantityRadius = item.OrdersService.QuantityRadius,
+                QuantityWeight = item.OrdersService.QuantityWeight,
+                TotalCost = item.OrdersService.TotalCost,
+                ServiceId = item.OrdersService.ServiceId
+            });
+            Console.WriteLine("----------------------------------------");
+            Console.WriteLine(id);
+            OrdersService newItem = _ordersServiceRep.GetById(id);
+            myOrder.OrdersServices.Add(newItem);
+        }
+        Cart = new OrderDto();
+    }
+    
+    private int AddMyOrder(int customerId)
+    {
+        int statusId = _statusRep.GetAll().Find(x => x.Title == "Не оплачен")!.Id;
+        return _myOrderRep.Create(new MyOrder
+        {
+            Commissions = DateTime.Now,
+            CustomerId = customerId,
+            StatusId = statusId,
+        });
+    }
+    public void AddOrdersServiceLocally(OrdersService item)
     {
         ShopCartItemDto newItem = new ShopCartItemDto
             {OrderDto = null, OrderDtoId = Cart.Id, OrdersService = item, ShopCartId = GetNextServiceId()};
