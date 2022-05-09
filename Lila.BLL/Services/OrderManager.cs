@@ -47,8 +47,6 @@ public class OrderManager
                 TotalCost = item.OrdersService.TotalCost,
                 ServiceId = item.OrdersService.ServiceId
             });
-            Console.WriteLine("----------------------------------------");
-            Console.WriteLine(id);
             OrdersService newItem = _ordersServiceRep.GetById(id);
             myOrder.OrdersServices.Add(newItem);
         }

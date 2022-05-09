@@ -54,6 +54,7 @@ public class AddOrdersService : PageModel
             _orderManager.UpdateCartByJsonString(HttpContext.Session.GetString(CartKey)!);
             OrdersService.BeginCityId = _cityManager.GetByTitle(BeginCityTitle)!.Id;
             OrdersService.EndCityId = _cityManager.GetByTitle(EndCityTitle)!.Id;
+            OrdersService.ServiceId = Int32.Parse(RouteData.Values["id"]!.ToString()!);
             _orderManager.AddOrdersServiceLocally(OrdersService);
             HttpContext.Session.SetString(CartKey, _orderManager.CartJsonString());
             return RedirectToPage("ServicesList");

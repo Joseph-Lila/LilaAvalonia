@@ -71,7 +71,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/lila/RiderProjects/Lila/Lila.Web/wwwroot/favicon.ico&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/lila/RiderProjects/Artem/Kursach&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
@@ -390,7 +390,11 @@
       <workItem from="1651957254015" duration="599000" />
       <workItem from="1651994919608" duration="18942000" />
       <workItem from="1652033329024" duration="19504000" />
-      <workItem from="1652083037938" duration="8381000" />
+      <workItem from="1652083037938" duration="9126000" />
+      <workItem from="1652093577663" duration="868000" />
+      <workItem from="1652094730482" duration="3769000" />
+      <workItem from="1652103865383" duration="33000" />
+      <workItem from="1652109476514" duration="5119000" />
     </task>
     <servers />
   </component>
