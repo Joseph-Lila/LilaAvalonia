@@ -5,9 +5,9 @@ namespace Lila.BLL.Services;
 
 public class ServiceManager
 {
-    private readonly IRepository<Service?> _serviceRep;
+    private readonly IRepository<Service> _serviceRep;
 
-    public ServiceManager(IRepository<Service?> serviceRep)
+    public ServiceManager(IRepository<Service> serviceRep)
     {
         _serviceRep = serviceRep;
     }
@@ -16,5 +16,5 @@ public class ServiceManager
     {
         return Services.Find(x => x.Id == id);
     }
-    public List<Service?> Services => _serviceRep.GetAll();
+    public List<Service> Services => _serviceRep.GetAll();
 }

@@ -5,37 +5,33 @@
     ViewData["Title"] = "Login";
 }
 
-<div class="container border text-center" style="padding: 20px">
+<section class="align-content-center align-items-center align-self-center d-flex flex-column text-center" style="height: 570px">
+<div class="border container h-100 m-5 m-xxl-5 mh-100 rounded-3 rounded-top text-center w-50" style="padding: 20px">
     <form method="post">
         <div class="text-danger" asp-validation-summary="ModelOnly"></div>
         <div class="form-group row">
-            <div class="col-2">
-                <label asp-for="LoginValue"></label>
+            <div>
+                <label asp-for="LoginValue" class="border-info font-monospace fs-3 fst-normal fw-bold text-body text-decoration-none text-uppercase">Login</label>
             </div>
-            <div class="col-5">
-                <input type="text" asp-for="LoginValue" class="form-control">
+            <div>
+                <input type="text" asp-for="LoginValue" class="font-monospace form-control fs-3 mb-3 me-auto ms-auto mt-3 p-3 text-body text-center w-50" required>
             </div>
             <span class="text-danger" asp-validation-for="LoginValue"></span>
         </div>
         <div class="form-group row">
-            <div class="col-2">
-                <label asp-for="PasswordValue"></label>s
+            <div>
+                <label asp-for="PasswordValue" class="border-info font-monospace fs-3 fst-normal fw-bold text-body text-decoration-none text-uppercase">Password</label>
             </div>
-            <div class="col-5">
-                <input type="password" asp-for="PasswordValue" class="form-control">
+            <div>
+                <input type="password" asp-for="PasswordValue" class="form-control fs-3 mb-3 me-auto ms-auto mt-3 p-3 text-center w-50" required>
             </div>
             <span class="text-danger" asp-validation-for="PasswordValue"></span>
         </div>
         <div class="form-group row">
-            <div class="col-2">
-                <input type="submit" class="btn btn-primary" value="Login">
+            <div>
+                <input type="submit" class="bg-opacity-25 btn btn-outline-dark btn-warning font-monospace fs-5 fst-italic m-3 p-2 shadow text-body text-capitalize text-center text-decoration-none" value="Log In">
             </div>
-            <div class="col-5">
-                
-            </div>
-        </div>
-        <div class="form-group row text-center">
-            <a href="@Url.Page("/AddCustomer")">Add customer</a>
         </div>
     </form>
 </div>
+</section>

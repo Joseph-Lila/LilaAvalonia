@@ -2,23 +2,62 @@
 @model Lila.Web.Pages.AddCustomer
 
 @{
-    ViewData["Title"] = "Добавление нового пользователя";
+    ViewData["Title"] = "Sign Up";
 }
 
-<h2>@ViewData["Title"]</h2>
-<div asp-validation-summary="All"></div>
-<form method="POST">
-    <div><label>Country</label><br /><input asp-for="item.Country" /></div>
-    <div><label>CityTitle</label><br /><input asp-for="item.CityTitle" /></div>
-    <div><label>Street</label><br /><input asp-for="item.Street" /></div>
-    <div><label>HomeNumber</label><br /><input asp-for="item.HomeNumber" type="number" /></div>
-    <div><label>FlatNumber</label><br /><input asp-for="item.FlatNumber" type="number" /></div>
-    <div><label>LastName</label><br /><input asp-for="item.LastName" /></div>
-    <div><label>Name</label><br /><input asp-for="item.Name" /></div>
-    <div><label>MiddleName</label><br /><input asp-for="item.MiddleName" /></div>
-    <div><label>Login</label><br /><input asp-for="item.Login" /></div>
-    <div><label>Password</label><br /><input asp-for="item.Password" type="password" /></div>
-    <div><label>Email</label><br /><input asp-for="item.Email" /></div>
-    <div><label>PhoneNumber</label><br /><input asp-for="item.PhoneNumber" /></div>
-    <input type="submit" value="Отправить" />
-</form>
+<section class="align-content-center align-items-center align-self-center d-flex flex-column text-center">
+    <div class="border container h-100 m-5 m-xxl-5 mh-100 rounded-3 rounded-top text-center w-50" style="padding: 20px">
+        <form method="POST">
+            <div asp-validation-summary="All"></div>
+            <div>
+                <label class="border-info font-monospace fs-3 fst-normal fw-bold text-body text-decoration-none text-uppercase">Country</label>
+                <input asp-for="item.Country" class="font-monospace form-control fs-4 m-auto text-body text-center w-50" required/>
+            </div>
+            <div>
+                <label class="border-info font-monospace fs-3 fst-normal fw-bold text-body text-decoration-none text-uppercase">City</label>
+                <input asp-for="item.CityTitle" class="font-monospace form-control fs-4 m-auto text-body text-center w-50" required/>
+            </div>
+            <div>
+                <label class="border-info font-monospace fs-3 fst-normal fw-bold text-body text-decoration-none text-uppercase">Street</label>
+                <input asp-for="item.Street" class="font-monospace form-control fs-4 m-auto text-body text-center w-50" required/>
+            </div>
+            <div>
+                <label class="border-info font-monospace fs-3 fst-normal fw-bold text-body text-decoration-none text-uppercase">Home Number</label>
+                <input asp-for="item.HomeNumber" type="number" class="font-monospace form-control fs-4 m-auto text-body text-center w-50" required/>
+            </div>
+            <div>
+                <label class="border-info font-monospace fs-3 fst-normal fw-bold text-body text-decoration-none text-uppercase">Flat Number</label>
+                <input asp-for="item.FlatNumber" type="number" class="font-monospace form-control fs-4 m-auto text-body text-center w-50" required/>
+            </div>
+            <div>
+                <label class="border-info font-monospace fs-3 fst-normal fw-bold text-body text-decoration-none text-uppercase">LastName</label>
+                <input asp-for="item.LastName" class="font-monospace form-control fs-4 m-auto text-body text-center w-50" required/>
+            </div>
+            <div>
+                <label class="border-info font-monospace fs-3 fst-normal fw-bold text-body text-decoration-none text-uppercase">Name</label>
+                <input asp-for="item.Name" class="font-monospace form-control fs-4 m-auto text-body text-center w-50" required/>
+            </div>
+            <div>
+                <label class="border-info font-monospace fs-3 fst-normal fw-bold text-body text-decoration-none text-uppercase">MiddleName</label>
+                <input asp-for="item.MiddleName" class="font-monospace form-control fs-4 m-auto text-body text-center w-50" required/>
+            </div>
+            <div>
+                <label class="border-info font-monospace fs-3 fst-normal fw-bold text-body text-decoration-none text-uppercase">Email</label>
+                <input asp-for="item.Email" class="font-monospace form-control fs-4 m-auto text-body text-center w-50" required/>
+            </div>
+            <div>
+                <label class="border-info font-monospace fs-3 fst-normal fw-bold text-body text-decoration-none text-uppercase">Phone Number</label>
+                <input asp-for="item.PhoneNumber" class="font-monospace form-control fs-4 m-auto text-body text-center w-50" required/>
+            </div>
+            <div>
+                <label class="border-info font-monospace fs-3 fst-normal fw-bold text-body text-decoration-none text-uppercase">Login</label>
+                <input asp-for="item.Login" class="font-monospace form-control fs-4 m-auto text-body text-center w-50" required/>
+            </div>
+            <div>
+                <label class="border-info font-monospace fs-3 fst-normal fw-bold text-body text-decoration-none text-uppercase">Password</label>
+                <input asp-for="item.Password" type="password" class="font-monospace form-control fs-4 m-auto text-body text-center w-50" required/>
+            </div>
+            <input type="submit" value="Send" class="bg-opacity-25 btn btn-outline-dark btn-warning font-monospace fs-5 fst-italic m-3 p-2 shadow text-body text-capitalize text-center text-decoration-none"/>
+        </form>
+    </div>
+</section>
