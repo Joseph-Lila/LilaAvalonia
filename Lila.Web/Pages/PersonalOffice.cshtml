@@ -5,17 +5,11 @@
     ViewData["Title"] = "Personal Office";
 }
 
-<section class="bg-gradient bg-warning border border-dark font-monospace fst-italic fw-bold lead lh-lg m-5 p-5 rounded-pill shadow text-body text-center text-uppercase">
-        <div class="container">
-            <h1>Orders History</h1> <a href="@Url.Page("/Order/ServicesList")" style="text-decoration: none">Click Here...</a>
-        </div>
-    </section>
-
 @if (User.Claims.ToList().Find(claim => claim.Type == "Operator") != null)
 {
     <section class="bg-gradient bg-warning border border-dark font-monospace fst-italic fw-bold lead lh-lg m-5 p-5 rounded-pill shadow text-body text-center text-uppercase">
         <div class="container">
-            <h1>Some text</h1><a style="text-decoration: none">Hey</a>
+            <h1>Operators Page</h1><a href="@Url.Page("/OperatorsPage")" style="text-decoration: none">Click Here...</a>
         </div>
     </section>
 }
