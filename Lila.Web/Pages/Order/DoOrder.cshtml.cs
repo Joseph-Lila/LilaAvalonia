@@ -1,10 +1,12 @@
 using Lila.BLL.DtoModels;
 using Lila.BLL.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace Lila.Web.Pages.Order;
 
+[Authorize(Policy = "ForCustomer")]
 public class DoOrder : PageModel
 {
     private readonly OrderManager _orderManager;

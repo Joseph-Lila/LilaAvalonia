@@ -15,7 +15,7 @@
             </div>
             <div>
                 <label class="border-info font-monospace fs-3 fst-normal fw-bold text-body text-decoration-none text-uppercase">City</label>
-                <input asp-for="item.CityTitle" class="font-monospace form-control fs-4 m-auto text-body text-center w-50" required/>
+                <select asp-for="item.CityTitle" asp-items="Model.CityList" class="font-monospace form-control fs-4 m-auto text-body text-center w-50"></select>
             </div>
             <div>
                 <label class="border-info font-monospace fs-3 fst-normal fw-bold text-body text-decoration-none text-uppercase">Street</label>
@@ -23,11 +23,11 @@
             </div>
             <div>
                 <label class="border-info font-monospace fs-3 fst-normal fw-bold text-body text-decoration-none text-uppercase">Home Number</label>
-                <input asp-for="item.HomeNumber" type="number" class="font-monospace form-control fs-4 m-auto text-body text-center w-50" required/>
+                <input asp-for="item.HomeNumber" type="number" min="1" class="font-monospace form-control fs-4 m-auto text-body text-center w-50" required/>
             </div>
             <div>
                 <label class="border-info font-monospace fs-3 fst-normal fw-bold text-body text-decoration-none text-uppercase">Flat Number</label>
-                <input asp-for="item.FlatNumber" type="number" class="font-monospace form-control fs-4 m-auto text-body text-center w-50" required/>
+                <input asp-for="item.FlatNumber" type="number" min="1" class="font-monospace form-control fs-4 m-auto text-body text-center w-50" required/>
             </div>
             <div>
                 <label class="border-info font-monospace fs-3 fst-normal fw-bold text-body text-decoration-none text-uppercase">LastName</label>

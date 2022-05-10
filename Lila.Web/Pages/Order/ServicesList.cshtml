@@ -1,14 +1,22 @@
 @page
 @model Lila.Web.Pages.Order.ServicesList
 
-<table class="table">
-    <thead>
-    <tr><th>Наименование услуги</th></tr>
-    </thead>
-    <tbody>
-    @foreach (var service in Model.Services)
-    {
-        <tr><td><a asp-page="AddOrdersService" asp-route-id="@service.Id">@service.Title</a></td></tr>
-    }
-    </tbody>
-</table>
+@{
+    ViewData["Title"] = "Services List";
+}
+
+<section class="bg-gradient bg-info bg-light border border-3 display-1 font-monospace fs-2 fst-italic fw-light m-5 p-2 text-black-50 text-center text-uppercase w-auto">
+    <table class="table container">
+        <thead>
+            <tr>
+                <th>Наименование услуги</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var service in Model.Services)
+            {
+                <tr><td><a asp-page="AddOrdersService" asp-route-id="@service.Id" style="text-decoration: none; color: #0c4128">@service.Title</a></td></tr>
+            }
+        </tbody>
+    </table>
+</section>

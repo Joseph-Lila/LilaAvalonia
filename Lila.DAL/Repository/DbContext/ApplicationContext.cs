@@ -25,7 +25,7 @@ public class ApplicationContext : Microsoft.EntityFrameworkCore.DbContext
     public ApplicationContext(DbContextOptions<ApplicationContext> options) : base(options)
     {
         // Database.EnsureDeleted();
-        // Database.EnsureCreated();   // создаем базу данных при первом обращении
+        // Database.EnsureCreated();
     }
     
     protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -99,10 +99,10 @@ public class ApplicationContext : Microsoft.EntityFrameworkCore.DbContext
             new Transport { Id = 4, TransportsKindId = 4, FleetId = 2}
         );
         modelBuilder.Entity<Service>().HasData(
-            new Service { Id = 1, Title = "Перевозка сборных грузов", Description = "description1", CostWeight = 5, CostRadius = 5},
-            new Service { Id = 2, Title = "Вывоз строительного и бытового мусора", Description = "description2", CostWeight = 7, CostRadius = 3},
-            new Service { Id = 3, Title = "Грузоперевозки", Description = "description3", CostWeight = 4, CostRadius = 6},
-            new Service { Id = 4, Title = "Специальные грузоперевозки", Description = "description4", CostWeight = 5, CostRadius = 10}
+            new Service { Id = 1, Title = "Перевозка сборных грузов", Description = "description1", CostWeight = 5, CostRadius = 5, ImageLink = "https://s0.rbk.ru/v6_top_pics/media/img/9/89/756003521970899.jpg"},
+            new Service { Id = 2, Title = "Вывоз строительного и бытового мусора", Description = "description2", CostWeight = 7, CostRadius = 3, ImageLink = "https://images.prom.ua/417178807_legendarnyj-gruzovik-shockwave.jpg"},
+            new Service { Id = 3, Title = "Грузоперевозки", Description = "description3", CostWeight = 4, CostRadius = 6, ImageLink = "https://wrc-info.ru/uploads/posts/2020-01/1578054173_inx960x640.jpg"},
+            new Service { Id = 4, Title = "Специальные грузоперевозки", Description = "description4", CostWeight = 5, CostRadius = 10, ImageLink = "https://perevozka24.ru/img/ck_upload/chto-takoe-specialnye-gruzy.jpg"}
         );
         modelBuilder.Entity<MyOrder>().HasData(
             new MyOrder { Id = 1, Commissions = DateTime.Now, Executions = DateTime.Now, CourierId = 1, CustomerId = 1, OperatorId = 1, StageId = 4, StatusId = 1}

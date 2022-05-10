@@ -1,20 +1,32 @@
 @page
-@using Microsoft.AspNetCore.Server.Kestrel.Core
 @model Lila.Web.Pages.Order.DoOrder
 
 @{
-    ViewData["Title"] = "Cart";
+    ViewData["Title"] = "Do Order";
 }
-<h2>@ViewData["Title"]</h2>
 
-@foreach (var item in Model.ShopCartItems)
-{
-    <h2>@item.ShopCartId</h2>
-    <h3>@item.OrdersService.TotalCost</h3>
-}
+<section class="bg-gradient bg-info bg-light border border-3 display-1 font-monospace fs-2 fst-italic fw-light mb-2 me-5 ms-5 mt-5 p-2 text-black-50 text-center text-uppercase w-auto">
+    <table class="table container">
+        <thead>
+        <tr>
+            <th>Id услуги</th>
+            <th>Общая стоимость</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var item in Model.ShopCartItems)
+        {
+            <tr>
+                <td>@item.OrdersService.ServiceId</td>
+                <td>@item.OrdersService.TotalCost</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</section>
 
 <form method="post" class="text-center container">
-    <input type="submit" value="Сохранить"/>
+    <input class="bg-info font-monospace form-control-lg fst-italic m-2 p-2 text-body text-capitalize" type="submit" value="Сохранить"/>
 </form>
 
 

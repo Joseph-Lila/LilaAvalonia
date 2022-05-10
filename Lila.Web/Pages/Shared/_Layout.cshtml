@@ -3,15 +3,18 @@
     <head>
         <meta charset="utf-8"/>
         <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <meta name="description" content=""/>
         <meta name="author" content=""/>
         <title>@ViewData["Title"] - Lila</title>
+        <link rel="icon" href="/home/lila/RiderProjects/Lila/Lila.Web/wwwroot/favicon.ico" type="image/x-icon">
+        <link rel="shortcut icon" href="/home/lila/RiderProjects/Lila/Lila.Web/wwwroot/favicon.ico" type="image/x-icon">
         <!-- Bootstrap core CSS -->
+        <link href="tailwind_theme/tailwind.css" rel="stylesheet" type="text/css"/>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"/>
         <link rel="stylesheet" href="~/css/site.css" asp-append-version="true"/>
         <link rel="stylesheet" href="~/Lila.Web.styles.css" asp-append-version="true"/>
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"/>
     </head>
     <body class="text-muted">
         <header class="bg-dark">
@@ -40,9 +43,9 @@
         </header>
     <main role="main">
         @RenderBody()
-        <footer class="bg-dark pt-5 text-white"> 
-            <div class="container"> 
-                <div class="row"> 
+        <footer class="bg-dark pt-5 text-white">
+            <div class="container">
+                <div class="row">
                     <div class="col-lg-4 py-3">
                         <a class="align-items-center d-inline-flex fw-bold gap-2 h3 lh-1 link-primary mb-3 text-decoration-none text-uppercase" asp-area="" asp-page="/Index">
                             <span>Lila</span>
@@ -77,18 +80,18 @@
                                 </svg> </a>
                         </div>
                     </div>
-                </div>                     
-                <div class="pb-3 pt-3"> 
-                    <hr class="border-secondary mt-0"/> 
+                </div>
+                <div class="pb-3 pt-3">
+                    <hr class="border-secondary mt-0"/>
                     <div class="align-items-center row">
                         <div class="col-md pb-2 pt-2">
                             <p class="mb-0">&copy; 2001 - 2022. All Rights Reserved - Lila</p>
                         </div>
                         <div class="col-md-auto pb-2 pt-2"><a href="#" class="link-light">Privacy Policy</a> | <a href="#" class="link-light">Terms of Use</a>
                         </div>
-                    </div>                         
-                </div>                     
-            </div>                 
+                    </div>
+                </div>
+            </div>
         </footer>
     </main>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

@@ -17,10 +17,6 @@ body {
   margin-bottom: 60px;
 }
 
-thead {
-  background-color: #ffcd39;
-}
-
-tbody {
-  background-color: aliceblue;
+a {
+  text-decoration: none;
 }

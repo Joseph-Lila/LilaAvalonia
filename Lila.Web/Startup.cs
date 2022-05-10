@@ -33,7 +33,12 @@ public class Startup
                 policy => policy.RequireClaim("Customer"));
         });
         services.AddDistributedMemoryCache();
-        services.AddSession();
+        services.AddSession(options =>
+        {
+            options.Cookie.Name = ".MyApp.Session";
+            options.IdleTimeout = TimeSpan.FromDays(7);
+            options.Cookie.IsEssential = true;
+        });
         services.AddRazorPages();
         services.ConfigureBllService(Configuration.GetConnectionString("DefaultConnection")!);
     }

@@ -1,7 +1,9 @@
 @page "{id:int}"
 @model Lila.Web.Pages.Order.AddOrdersService
 
-<h2>Add service</h2>
+@{
+    ViewData["Title"] = "Add Service";
+}
 
 <script >
 function abba() {
@@ -15,85 +17,73 @@ function abba() {
 </script>
 
 <form method="post" class="text-center container">
-    <div asp-validation-summary="All"></div>
     <div>
-        <label>Наименование услуги</label>
+        <label class="font-monospace fs-2 fst-italic m-1 p-1 text-body text-capitalize">Наименование услуги</label>
         <div>
-            <input asp-for="OrdersService.Service.Title" />
-            <span asp-validation-for="OrdersService.Service.Title"></span>
+            <input required asp-for="OrdersService.Service.Title" class="font-monospace fs-3 fst-italic m-1 p-1 text-center text-warning"/>
         </div>
     </div>
     <div>
-        <label>Описание услуги</label>
+        <label class="font-monospace fs-2 fst-italic m-1 p-1 text-body text-capitalize">Описание услуги</label>
         <div>
-            <input asp-for="OrdersService.Service.Description" />
-            <span asp-validation-for="OrdersService.Service.Description"></span>
+            <input required asp-for="OrdersService.Service.Description" class="font-monospace fs-3 fst-italic m-1 p-1 text-center text-warning"/>
         </div>
     </div>
     <div>
-        <label>Стоимость за единицу веса</label>
+        <label class="font-monospace fs-2 fst-italic m-1 p-1 text-body text-capitalize">Стоимость за единицу веса</label>
         <div>
-            <input asp-for="OrdersService.Service.CostWeight" id="costWeight" type="float"/>
-            <span asp-validation-for="OrdersService.Service.CostWeight"></span>
+            <input required readonly="readonly" min="0" asp-for="OrdersService.Service.CostWeight" id="costWeight" type="float" class="font-monospace fs-3 fst-italic m-1 p-1 text-center text-warning"/>
         </div>
     </div>
     <div>
-        <label>Стоимость за единицу расстояния</label>
+        <label class="font-monospace fs-2 fst-italic m-1 p-1 text-body text-capitalize">Стоимость за единицу расстояния</label>
         <div>
-            <input asp-for="OrdersService.Service.CostRadius" id="costRadius" type="float"/>
-            <span asp-validation-for="OrdersService.Service.CostRadius"></span>
+            <input required readonly="readonly" min="0" asp-for="OrdersService.Service.CostRadius" id="costRadius" type="float" class="font-monospace fs-3 fst-italic m-1 p-1 text-center text-warning"/>
         </div>
     </div>
     <div>
-        <label>Вес</label>
+        <label class="font-monospace fs-2 fst-italic m-1 p-1 text-body text-capitalize">Вес</label>
         <div>
-            <input asp-for="OrdersService.QuantityWeight" onchange="abba()" type="float" id="weight"/>
-            <span asp-validation-for="OrdersService.QuantityWeight"></span>
+            <input required asp-for="OrdersService.QuantityWeight" onchange="abba()" type="float" id="weight" class="font-monospace fs-3 fst-italic m-1 p-1 text-center text-warning"/>
         </div>
     </div>
     <div>
-        <label>Расстояние</label>
+        <label class="font-monospace fs-2 fst-italic m-1 p-1 text-body text-capitalize">Расстояние</label>
         <div>
-            <input asp-for="OrdersService.QuantityRadius" onchange="abba()" type="float" id="radius"/>
-            <span asp-validation-for="OrdersService.QuantityRadius"></span>
+            <input required asp-for="OrdersService.QuantityRadius" onchange="abba()" type="float" id="radius" class="font-monospace fs-3 fst-italic m-1 p-1 text-center text-warning"/>
         </div>
     </div>
     <div>
-        <label>Город отправления</label>
+        <label class="font-monospace fs-2 fst-italic m-1 p-1 text-body text-capitalize">Город отправления</label>
         <div>
-            <select asp-for="BeginCityTitle" asp-items="Model.CityList">
-            </select>
+            <select asp-for="BeginCityTitle" asp-items="Model.CityList" class="font-monospace fs-3 fst-italic m-1 p-1 text-center text-warning"></select>
         </div>
     </div>
     <div>
-        <label>Пункт отправления</label>
+        <label class="font-monospace fs-2 fst-italic m-1 p-1 text-body text-capitalize">Пункт отправления</label>
         <div>
-            <input asp-for="OrdersService.DeparturesAddress"/>
-            <span asp-validation-for="OrdersService.DeparturesAddress"></span>
+            <input required asp-for="OrdersService.DeparturesAddress" class="font-monospace fs-3 fst-italic m-1 p-1 text-center text-warning"/>
         </div>
     </div>
     <div>
-        <label>Город назначения</label>
+        <label class="font-monospace fs-2 fst-italic m-1 p-1 text-body text-capitalize">Город назначения</label>
         <div>
-            <select asp-for="EndCityTitle" asp-items="Model.CityList">
-            </select>
+            <select asp-for="EndCityTitle" asp-items="Model.CityList" class="font-monospace fs-3 fst-italic m-1 p-1 text-center text-warning"></select>
         </div>
     </div>
     <div>
-        <label>Пункт назначения</label>
+        <label class="font-monospace fs-2 fst-italic m-1 p-1 text-body text-capitalize">Пункт назначения</label>
         <div>
-            <input asp-for="OrdersService.DestinationsAddress"/>
-            <span asp-validation-for="OrdersService.DestinationsAddress"></span>
+            <input required asp-for="OrdersService.DestinationsAddress" class="font-monospace fs-3 fst-italic m-1 p-1 text-center text-warning"/>
         </div>
     </div>
     <div>
-        <label>Общая стоимость</label>
+        <label class="font-monospace fs-2 fst-italic m-1 p-1 text-body text-capitalize">Общая стоимость</label>
         <div>
-            <input asp-for="OrdersService.TotalCost" id="totalCost" readonly="readonly"/>
-            <span asp-validation-for="OrdersService.TotalCost"></span>
+            <input required asp-for="OrdersService.TotalCost" id="totalCost" readonly="readonly" class="font-monospace fs-3 fst-italic m-1 p-1 text-center text-warning"/>
         </div>
     </div>
     <div>
-        <input type="submit" value="Сохранить"/>
+        <input type="submit" value="Save" class="font-monospace fs-3 fst-italic m-1 p-1 text-center text-warning"/>
     </div>
 </form>

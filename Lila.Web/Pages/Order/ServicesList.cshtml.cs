@@ -1,10 +1,12 @@
 using Lila.BLL.Services;
 using Lila.Domain;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace Lila.Web.Pages.Order;
 
+[Authorize(Policy = "ForCustomer")]
 public class ServicesList : PageModel
 {
     private readonly ServiceManager _manager;

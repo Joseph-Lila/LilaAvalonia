@@ -13,6 +13,7 @@ public class Service : IBaseEntity
     public string Description { get; set; } = "";
     public double CostWeight { get; set; }
     public double CostRadius { get; set; }
+    public string ImageLink { get; set; }
     // ---
     public List<OrdersService> OrdersServices { get; set; } = new();
 }

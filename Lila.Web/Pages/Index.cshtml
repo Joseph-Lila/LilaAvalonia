@@ -121,23 +121,40 @@
         </div>                     
     </div>                 
 </section>
-<section class="pb-5 pt-5">
-    <div class="container">
-        <div class="fs-3 lead text-black text-body text-capitalize text-center">Our services</div>
-        <ul class="list-group">
+<section class="bg-light pb-5 pt-5"> 
+    <div class="container pb-5 pt-5">
+        <div class="mb-4 row">
+            <div class="col-md">
+                <h2 class="h5 text-primary">Our Top Cars</h2>
+                <h3 class="fw-bold h1 mb-3 text-dark">Services For All Your Needs</h3>
+                <div class="bg-primary col-2 d-inline-flex mb-3 pb-1"></div>
+            </div>
+        </div>
+        <div class="g-4 justify-content-center row row-cols-lg-3 row-cols-md-2"> 
             @foreach (var service in Model.Services)
             {
-                <li class="list-group-item">
-                    <h1 class="bg-white fw-light h3 shadow-lg text-black text-center text-uppercase">@service.Title</h1>
-                    <section class="pg-empty-placeholder">
-                        <article class="fst-italic pg-empty-placeholder placeholder-wave text-body text-center">
-                            @service.Description
-                        </article>
-                    </section>
-                </li>
+                <div>
+                    <div class="bg-white border shadow-sm"> <a href="#"><img src="@service.ImageLink" class="img-fluid w-100" alt="..." width="600" height="450"/></a>
+                        <div class="p-4">
+                            <h4 class="fw-bold h5"><a href="" class="link-secondary text-decoration-none">@service.Title</a></h4>
+                            <p class="small">@service.Description</p>
+                            <hr/>
+                            <div class="align-items-center d-flex justify-content-between">
+                                <div class="align-items-center d-inline-flex gap-1 pb-1 pt-1"><span>@Math.Round(4 + Random.Shared.NextDouble(), 1)</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="1.125em" height="1.125em" class="text-primary">
+                                        <g>
+                                            <path fill="none" d="M0 0h24v24H0z"></path>
+                                            <path d="M12 18.26l-7.053 3.948 1.575-7.928L.587 8.792l8.027-.952L12 .5l3.386 7.34 8.027.952-5.935 5.488 1.575 7.928z"></path>
+                                        </g>
+                                    </svg><span>(@Random.Shared.Next(40000, 1000000) reviews)</span>
+                                </div><span class="fw-bold pb-1 pt-1 text-dark">$@(service.CostWeight * service.CostRadius)/km</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             }
-        </ul>
-    </div>
+        </div>
+    </div>                 
 </section>
 <section class="bg-primary pb-5 pt-5 text-center text-white-50">
     <div class="container pb-3 pt-3"> 

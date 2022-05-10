@@ -1,14 +1,30 @@
 @page
 @model Lila.Web.Pages.PersonalOffice
 
-<h1>Personal office</h1>
+@{
+    ViewData["Title"] = "Personal Office";
+}
+
+<section class="bg-gradient bg-warning border border-dark font-monospace fst-italic fw-bold lead lh-lg m-5 p-5 rounded-pill shadow text-body text-center text-uppercase">
+        <div class="container">
+            <h1>Orders History</h1> <a href="@Url.Page("/Order/ServicesList")" style="text-decoration: none">Click Here...</a>
+        </div>
+    </section>
 
 @if (User.Claims.ToList().Find(claim => claim.Type == "Operator") != null)
 {
-    <h1>Operator was founded!!!</h1>
+    <section class="bg-gradient bg-warning border border-dark font-monospace fst-italic fw-bold lead lh-lg m-5 p-5 rounded-pill shadow text-body text-center text-uppercase">
+        <div class="container">
+            <h1>Some text</h1><a style="text-decoration: none">Hey</a>
+        </div>
+    </section>
 }
 
 @if (User.Claims.ToList().Find(claim => claim.Type == "Customer") != null)
 {
-    <a href="@Url.Page("/Order/ServicesList")">Services List</a>
+    <section class="bg-gradient bg-warning border border-dark font-monospace fst-italic fw-bold lead lh-lg m-5 p-5 rounded-pill shadow text-body text-center text-uppercase">
+        <div class="container">
+            <h1>Services List</h1> <a href="@Url.Page("/Order/ServicesList")" style="text-decoration: none">Click Here...</a>
+        </div>
+    </section>
 }
