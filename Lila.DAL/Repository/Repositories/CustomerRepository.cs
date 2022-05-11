@@ -16,7 +16,7 @@ public class CustomerRepository : IRepository<Customer>
 
     public List<Customer> GetAll()
     {
-        return _dbContext.Set<Customer>()
+        return _dbContext.Customers
             .Include(city => city.User)
             .Include(city => city.CustomersCities)
             .Include(city => city.MyOrders)
@@ -26,31 +26,26 @@ public class CustomerRepository : IRepository<Customer>
 
     public Customer GetById(int id)
     {
-        return _dbContext.Set<Customer>()
-            .Include(city => city.User)
-            .Include(city => city.CustomersCities)
-            .Include(city => city.MyOrders)
-            .AsNoTracking()
-            .ToList()
+        return GetAll()
             .FirstOrDefault(customer => customer.Id == id)!;
     }
 
     public int Create(Customer item)
     {
-        _dbContext.Set<Customer>().Add(item);
+        GetAll().Add(item);
         _dbContext.SaveChanges();
         return item.Id;
     }
 
     public void Update(Customer item)
     {
-        _dbContext.Set<Customer>().Update(item);
+        _dbContext.Customers.Update(item);
         _dbContext.SaveChanges();
     }
 
     public void Delete(Customer item)
     {
-        _dbContext.Set<Customer>().Remove(item);
+        _dbContext.Customers.Remove(item);
         _dbContext.SaveChanges();
     }
 }

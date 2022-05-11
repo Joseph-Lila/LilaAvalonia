@@ -16,7 +16,7 @@ public class CityRepository : IRepository<City>
 
     public List<City> GetAll()
     {
-        return _dbContext.Set<City>()
+        return _dbContext.Cities
             .Include(city => city.Fleets)
             .Include(city => city.CustomersCities)
             .Include(city => city.OrdersServiceBeginCities)
@@ -27,32 +27,26 @@ public class CityRepository : IRepository<City>
 
     public City GetById(int id)
     {
-        return _dbContext.Set<City>()
-            .Include(city => city.Fleets)
-            .Include(city => city.CustomersCities)
-            .Include(city => city.OrdersServiceBeginCities)
-            .Include(city => city.OrdersServiceEndCities)
-            .AsNoTracking()
-            .ToList()
+        return GetAll()
             .FirstOrDefault(city => city.Id == id)!;
     }
 
     public int Create(City item)
     {
-        _dbContext.Set<City>().Add(item);
+        GetAll().Add(item);
         _dbContext.SaveChanges();
         return item.Id;
     }
 
     public void Update(City item)
     {
-        _dbContext.Set<City>().Update(item);
+        _dbContext.Cities.Update(item);
         _dbContext.SaveChanges();
     }
 
     public void Delete(City item)
     {
-        _dbContext.Set<City>().Remove(item);
+        _dbContext.Cities.Remove(item);
         _dbContext.SaveChanges();
     }
 }

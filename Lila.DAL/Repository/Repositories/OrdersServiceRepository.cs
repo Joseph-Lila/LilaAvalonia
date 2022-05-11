@@ -16,7 +16,7 @@ public class OrdersServiceRepository : IRepository<OrdersService>
 
     public List<OrdersService> GetAll()
     {
-        return _dbContext.Set<OrdersService>()
+        return _dbContext.OrdersServices
             .Include(ordersService => ordersService.MyOrder)
             .Include(ordersService => ordersService.Service)
             .Include(ordersService => ordersService.BeginCity)
@@ -27,32 +27,26 @@ public class OrdersServiceRepository : IRepository<OrdersService>
 
     public OrdersService GetById(int id)
     {
-        return _dbContext.Set<OrdersService>()
-            .Include(ordersService => ordersService.MyOrder)
-            .Include(ordersService => ordersService.Service)
-            .Include(ordersService => ordersService.BeginCity)
-            .Include(ordersService => ordersService.EndCity)
-            .AsNoTracking()
-            .ToList()
+        return GetAll()
             .FirstOrDefault(ordersService => ordersService.Id == id)!;
     }
 
     public int Create(OrdersService item)
     {
-        _dbContext.Set<OrdersService>().Add(item);
+        GetAll().Add(item);
         _dbContext.SaveChanges();
         return item.Id;
     }
 
     public void Update(OrdersService item)
     {
-        _dbContext.Set<OrdersService>().Update(item);
+        _dbContext.OrdersServices.Update(item);
         _dbContext.SaveChanges();
     }
 
     public void Delete(OrdersService item)
     {
-        _dbContext.Set<OrdersService>().Remove(item);
+        _dbContext.OrdersServices.Remove(item);
         _dbContext.SaveChanges();
     }
 }

@@ -16,7 +16,7 @@ public class FleetRepository : IRepository<Fleet>
 
     public List<Fleet> GetAll()
     {
-        return _dbContext.Set<Fleet>()
+        return _dbContext.Fleets
             .Include(fleet => fleet.City)
             .Include(fleet => fleet.Transports)
             .AsNoTracking()
@@ -25,30 +25,26 @@ public class FleetRepository : IRepository<Fleet>
 
     public Fleet GetById(int id)
     {
-        return _dbContext.Set<Fleet>()
-            .Include(fleet => fleet.City)
-            .Include(fleet => fleet.Transports)
-            .AsNoTracking()
-            .ToList()
+        return GetAll()
             .FirstOrDefault(fleet => fleet.Id == id)!;
     }
 
     public int Create(Fleet item)
     {
-        _dbContext.Set<Fleet>().Add(item);
+        GetAll().Add(item);
         _dbContext.SaveChanges();
         return item.Id;
     }
 
     public void Update(Fleet item)
     {
-        _dbContext.Set<Fleet>().Update(item);
+        _dbContext.Fleets.Update(item);
         _dbContext.SaveChanges();
     }
 
     public void Delete(Fleet item)
     {
-        _dbContext.Set<Fleet>().Remove(item);
+        _dbContext.Fleets.Remove(item);
         _dbContext.SaveChanges();
     }
 }

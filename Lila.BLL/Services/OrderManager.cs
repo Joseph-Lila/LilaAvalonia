@@ -33,8 +33,8 @@ public class OrderManager
     {
         int statusId = _statusRep.GetAll().Find(x => x.Title == "Не оплачен")!.Id;
         int stageId = _stageRep.GetAll().Find(x => x.Title == "На рассмотрении")!.Id;
-        order.StatusId = statusId;
-        order.StageId = stageId;
+        order.Status = _statusRep.GetById(statusId);
+        order.Stage = _stageRep.GetById(stageId);
         _myOrderRep.Update(order);
     }
     public List<MyOrder> GetMyOrders(string login)

@@ -16,7 +16,7 @@ public class EmployeeRepository : IRepository<Employee>
 
     public List<Employee> GetAll()
     {
-        return _dbContext.Set<Employee>()
+        return _dbContext.Employees
             .Include(employee => employee.User)
             .Include(employee => employee.Status)
             .AsNoTracking()
@@ -25,30 +25,26 @@ public class EmployeeRepository : IRepository<Employee>
 
     public Employee GetById(int id)
     {
-        return _dbContext.Set<Employee>()
-            .Include(employee => employee.User)
-            .Include(employee => employee.Status)
-            .AsNoTracking()
-            .ToList()
+        return GetAll()
             .FirstOrDefault(employee => employee.Id == id)!;
     }
 
     public int Create(Employee item)
     {
-        _dbContext.Set<Employee>().Add(item);
+        GetAll().Add(item);
         _dbContext.SaveChanges();
         return item.Id;
     }
 
     public void Update(Employee item)
     {
-        _dbContext.Set<Employee>().Update(item);
+        _dbContext.Employees.Update(item);
         _dbContext.SaveChanges();
     }
 
     public void Delete(Employee item)
     {
-        _dbContext.Set<Employee>().Remove(item);
+        _dbContext.Employees.Remove(item);
         _dbContext.SaveChanges();
     }
 }
