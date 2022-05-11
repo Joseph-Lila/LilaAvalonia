@@ -12,6 +12,7 @@ public class Transport : IBaseEntity
     // ---
     public int TransportsKindId { get; set; }
     public TransportsKind? TransportsKind { get; set; }
+    // ---
     public int FleetId { get; set; }
     public Fleet? Fleet { get; set; }
     // ---

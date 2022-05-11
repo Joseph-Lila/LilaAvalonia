@@ -18,7 +18,6 @@ public class RoleRepository : IRepository<Role>
     {
         return _dbContext.Roles
             .Include(role => role.UsersRoles)
-            .AsNoTracking()
             .ToList();
     }
 
@@ -30,7 +29,7 @@ public class RoleRepository : IRepository<Role>
 
     public int Create(Role item)
     {
-        GetAll().Add(item);
+        _dbContext.Roles.Add(item);
         _dbContext.SaveChanges();
         return item.Id;
     }

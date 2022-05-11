@@ -21,7 +21,6 @@ public class OrdersServiceRepository : IRepository<OrdersService>
             .Include(ordersService => ordersService.Service)
             .Include(ordersService => ordersService.BeginCity)
             .Include(ordersService => ordersService.EndCity)
-            .AsNoTracking()
             .ToList();
     }
 
@@ -33,7 +32,7 @@ public class OrdersServiceRepository : IRepository<OrdersService>
 
     public int Create(OrdersService item)
     {
-        GetAll().Add(item);
+        _dbContext.OrdersServices.Add(item);
         _dbContext.SaveChanges();
         return item.Id;
     }

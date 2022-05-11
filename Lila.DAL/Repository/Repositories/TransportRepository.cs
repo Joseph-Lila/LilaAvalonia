@@ -20,37 +20,31 @@ public class TransportRepository : IRepository<Transport>
             .Include(transport => transport.TransportsKind)
             .Include(transport => transport.Fleet)
             .Include(transport => transport.OrdersTransports)
-            .AsNoTracking()
             .ToList();
     }
 
     public Transport GetById(int id)
     {
-        return _dbContext.Set<Transport>()
-            .Include(transport => transport.TransportsKind)
-            .Include(transport => transport.Fleet)
-            .Include(transport => transport.OrdersTransports)
-            .AsNoTracking()
-            .ToList()
+        return GetAll()
             .FirstOrDefault(transport => transport.Id == id)!;
     }
 
     public int Create(Transport item)
     {
-        _dbContext.Set<Transport>().Add(item);
+        _dbContext.Transports.Add(item);
         _dbContext.SaveChanges();
         return item.Id;
     }
 
     public void Update(Transport item)
     {
-        _dbContext.Set<Transport>().Update(item);
+        _dbContext.Transports.Update(item);
         _dbContext.SaveChanges();
     }
 
     public void Delete(Transport item)
     {
-        _dbContext.Set<Transport>().Remove(item);
+        _dbContext.Transports.Remove(item);
         _dbContext.SaveChanges();
     }
 }

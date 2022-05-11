@@ -35,32 +35,18 @@ public class SignUpManager
         {
             // check if city exists
             int? cityId = _cityRep.GetAll().Find(x => x.Title == item.CityTitle)?.Id;
-            if (cityId == null)
-                return false;
-            // add user in db
-            _userRep.Create(new User 
+            int userId = _userRep.Create(new User 
                 {Email = item.Email, Login = item.Login, Password = item.Password, PhoneNumber = item.PhoneNumber,});
-            // get new user id
-            int userId = _userRep.GetAll().Find(user => user.Email == item.Email && user.Login == item.Login 
-                && user.Password == item.Password && user.PhoneNumber == item.PhoneNumber)!.Id;
-            // get roleId for "Customer"
             int roleId = _roleRep.GetAll().Find(role => role.Title == "Customer")!.Id;
-            // now we are ready to add users role in the db
             _usersRoleRep.Create(new UsersRole { RoleId = roleId, UserId = userId});
-            // add customer to db
-            _customerRep.Create(new Customer
+            int customerId = _customerRep.Create(new Customer
             {Country = item.Country, FlatNumber = item.FlatNumber, HomeNumber = item.HomeNumber, 
                 LastName = item.LastName, MiddleName = item.MiddleName, Name = item.Name, Street = item.Street,
                 UserId = userId,});
-            // get new customer id
-            int customerId = _customerRep.GetAll().Find(x =>
-                x.Country == item.Country && x.FlatNumber == item.FlatNumber && x.HomeNumber == item.HomeNumber
-                && x.LastName == item.LastName && x.MiddleName == item.MiddleName && x.Name == item.Name
-                && x.Street == item.Street && x.UserId == userId)!.Id;
+            Console.WriteLine($"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!----{customerId} ------ {userId}");
             _customersCityRep.Create(new CustomersCity {CityId = (int) cityId, CustomerId = customerId});
             return true;
         }
-
         return false;
     }
 }

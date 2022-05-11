@@ -19,7 +19,6 @@ public class OrdersTransportRepository : IRepository<OrdersTransport>
         return _dbContext.OrdersTransports
             .Include(ordersTransport => ordersTransport.Transport)
             .Include(ordersTransport => ordersTransport.MyOrder)
-            .AsNoTracking()
             .ToList();
     }
 
@@ -31,7 +30,7 @@ public class OrdersTransportRepository : IRepository<OrdersTransport>
 
     public int Create(OrdersTransport item)
     {
-        GetAll().Add(item);
+        _dbContext.OrdersTransports.Add(item);
         _dbContext.SaveChanges();
         return item.Id;
     }

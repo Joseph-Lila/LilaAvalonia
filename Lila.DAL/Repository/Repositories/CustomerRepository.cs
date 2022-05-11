@@ -20,7 +20,6 @@ public class CustomerRepository : IRepository<Customer>
             .Include(city => city.User)
             .Include(city => city.CustomersCities)
             .Include(city => city.MyOrders)
-            .AsNoTracking()
             .ToList();
     }
 
@@ -32,7 +31,7 @@ public class CustomerRepository : IRepository<Customer>
 
     public int Create(Customer item)
     {
-        GetAll().Add(item);
+        _dbContext.Customers.Add(item);
         _dbContext.SaveChanges();
         return item.Id;
     }

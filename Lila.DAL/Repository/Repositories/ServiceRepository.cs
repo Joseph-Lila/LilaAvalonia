@@ -18,7 +18,6 @@ public class ServiceRepository : IRepository<Service>
     {
         return _dbContext.Services
             .Include(service => service.OrdersServices)
-            .AsNoTracking()
             .ToList();
     }
 
@@ -30,7 +29,7 @@ public class ServiceRepository : IRepository<Service>
 
     public int Create(Service item)
     {
-        GetAll().Add(item);
+        _dbContext.Services.Add(item);
         _dbContext.SaveChanges();
         return item.Id;
     }

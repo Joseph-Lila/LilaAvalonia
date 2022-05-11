@@ -19,7 +19,6 @@ public class FleetRepository : IRepository<Fleet>
         return _dbContext.Fleets
             .Include(fleet => fleet.City)
             .Include(fleet => fleet.Transports)
-            .AsNoTracking()
             .ToList();
     }
 
@@ -31,7 +30,7 @@ public class FleetRepository : IRepository<Fleet>
 
     public int Create(Fleet item)
     {
-        GetAll().Add(item);
+        _dbContext.Fleets.Add(item);
         _dbContext.SaveChanges();
         return item.Id;
     }

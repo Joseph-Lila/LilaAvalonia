@@ -19,36 +19,31 @@ public class UsersRoleRepository : IRepository<UsersRole>
         return _dbContext.Set<UsersRole>()
             .Include(usersRole => usersRole.User)
             .Include(usersRole => usersRole.Role)
-            .AsNoTracking()
             .ToList();
     }
 
     public UsersRole GetById(int id)
     {
-        return _dbContext.Set<UsersRole>()
-            .Include(usersRole => usersRole.User)
-            .Include(usersRole => usersRole.Role)
-            .AsNoTracking()
-            .ToList()
+        return GetAll()
             .FirstOrDefault(usersRole => usersRole.Id == id)!;
     }
 
     public int Create(UsersRole item)
     {
-        _dbContext.Set<UsersRole>().Add(item);
+        _dbContext.UsersRoles.Add(item);
         _dbContext.SaveChanges();
         return item.Id;
     }
 
     public void Update(UsersRole item)
     {
-        _dbContext.Set<UsersRole>().Update(item);
+        _dbContext.UsersRoles.Update(item);
         _dbContext.SaveChanges();
     }
 
     public void Delete(UsersRole item)
     {
-        _dbContext.Set<UsersRole>().Remove(item);
+        _dbContext.UsersRoles.Remove(item);
         _dbContext.SaveChanges();
     }
 }

@@ -19,7 +19,6 @@ public class EmployeeRepository : IRepository<Employee>
         return _dbContext.Employees
             .Include(employee => employee.User)
             .Include(employee => employee.Status)
-            .AsNoTracking()
             .ToList();
     }
 
@@ -31,7 +30,7 @@ public class EmployeeRepository : IRepository<Employee>
 
     public int Create(Employee item)
     {
-        GetAll().Add(item);
+        _dbContext.Employees.Add(item);
         _dbContext.SaveChanges();
         return item.Id;
     }

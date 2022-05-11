@@ -21,7 +21,6 @@ public class MyOrderRepository : IRepository<MyOrder>
             .Include(myOrder => myOrder.Stage)
             .Include(myOrder => myOrder.Status)
             .Include(myOrder => myOrder.OrdersTransports)
-            .AsNoTracking()
             .ToList();
     }
 
@@ -33,7 +32,7 @@ public class MyOrderRepository : IRepository<MyOrder>
 
     public int Create(MyOrder item)
     {
-        GetAll().Add(item);
+        _dbContext.MyOrders.Add(item);
         _dbContext.SaveChanges();
         return item.Id;
     }
