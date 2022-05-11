@@ -1,3 +1,4 @@
+using Lila.DAL.Repository.DbContext;
 using Lila.DAL.Repository.Interfaces;
 using Lila.Domain;
 using Microsoft.EntityFrameworkCore;
@@ -6,9 +7,9 @@ namespace Lila.DAL.Repository.Repositories;
 
 public class UsersRoleRepository : IRepository<UsersRole>
 {
-    private readonly Microsoft.EntityFrameworkCore.DbContext _dbContext;
+    private readonly ApplicationContext _dbContext;
 
-    public UsersRoleRepository(Microsoft.EntityFrameworkCore.DbContext dbContext)
+    public UsersRoleRepository(ApplicationContext dbContext)
     {
         _dbContext = dbContext;
     }

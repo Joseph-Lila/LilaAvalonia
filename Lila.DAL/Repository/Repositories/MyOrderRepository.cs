@@ -1,3 +1,4 @@
+using Lila.DAL.Repository.DbContext;
 using Lila.DAL.Repository.Interfaces;
 using Lila.Domain;
 using Microsoft.EntityFrameworkCore;
@@ -6,9 +7,9 @@ namespace Lila.DAL.Repository.Repositories;
 
 public class MyOrderRepository : IRepository<MyOrder>
 {
-    private readonly Microsoft.EntityFrameworkCore.DbContext _dbContext;
+    private readonly ApplicationContext _dbContext;
 
-    public MyOrderRepository(Microsoft.EntityFrameworkCore.DbContext dbContext)
+    public MyOrderRepository(ApplicationContext dbContext)
     {
         _dbContext = dbContext;
     }
@@ -45,6 +46,8 @@ public class MyOrderRepository : IRepository<MyOrder>
 
     public void Update(MyOrder item)
     {
+        _dbContext.MyOrders.Attach(item);
+        _dbContext.Entry(item).State = EntityState.Modified;
         _dbContext.Set<MyOrder>().Update(item);
         _dbContext.SaveChanges();
     }

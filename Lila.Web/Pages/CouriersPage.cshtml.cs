@@ -3,8 +3,8 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace Lila.Web.Pages;
 
-[Authorize(Policy = "ForOperator")]
-public class OperatorsPage : PageModel
+[Authorize(Policy = "ForCourier")]
+public class CouriersPage : PageModel
 {
     public void OnGet()
     {

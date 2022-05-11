@@ -1,3 +1,4 @@
+using Lila.DAL.Repository.DbContext;
 using Lila.DAL.Repository.Interfaces;
 using Lila.Domain;
 using Microsoft.EntityFrameworkCore;
@@ -6,9 +7,9 @@ namespace Lila.DAL.Repository.Repositories;
 
 public class FleetRepository : IRepository<Fleet>
 {
-    private readonly Microsoft.EntityFrameworkCore.DbContext _dbContext;
+    private readonly ApplicationContext _dbContext;
 
-    public FleetRepository(Microsoft.EntityFrameworkCore.DbContext dbContext)
+    public FleetRepository(ApplicationContext dbContext)
     {
         _dbContext = dbContext;
     }

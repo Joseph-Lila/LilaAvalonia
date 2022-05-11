@@ -28,6 +28,20 @@ public class OrderManager
         _stageRep = stageRep;
         Cart = new OrderDto();
     }
+
+    public void MarkAsPaid(MyOrder order)
+    {
+        int statusId = _statusRep.GetAll().Find(x => x.Title == "Не оплачен")!.Id;
+        int stageId = _stageRep.GetAll().Find(x => x.Title == "На рассмотрении")!.Id;
+        order.StatusId = statusId;
+        order.StageId = stageId;
+        _myOrderRep.Update(order);
+    }
+    public List<MyOrder> GetMyOrders(string login)
+    {
+        int customerId = _userRep.GetAll().Find(x => x.Login == login)!.Id;
+        return _myOrderRep.GetAll().FindAll(x => x.CustomerId == customerId);
+    }
     public void AddFullOrder(string login, List<ShopCartItemDto> shopCartItems)
     {
         int customerId = _userRep.GetAll().Find(x => x.Login == login)!.Id;

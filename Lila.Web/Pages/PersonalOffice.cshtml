@@ -5,6 +5,15 @@
     ViewData["Title"] = "Personal Office";
 }
 
+@if (User.Claims.ToList().Find(claim => claim.Type == "Director") != null)
+{
+    <section class="bg-gradient bg-warning border border-dark font-monospace fst-italic fw-bold lead lh-lg m-5 p-5 rounded-pill shadow text-body text-center text-uppercase">
+        <div class="container">
+            <h1>Handbooks</h1> <a href="@Url.Page("/Handbooks")" style="text-decoration: none">Click Here...</a>
+        </div>
+    </section>
+}
+
 @if (User.Claims.ToList().Find(claim => claim.Type == "Operator") != null)
 {
     <section class="bg-gradient bg-warning border border-dark font-monospace fst-italic fw-bold lead lh-lg m-5 p-5 rounded-pill shadow text-body text-center text-uppercase">
@@ -18,7 +27,25 @@
 {
     <section class="bg-gradient bg-warning border border-dark font-monospace fst-italic fw-bold lead lh-lg m-5 p-5 rounded-pill shadow text-body text-center text-uppercase">
         <div class="container">
+            <h1>Orders History</h1> <a href="@Url.Page("/Order/OrdersHistory")" style="text-decoration: none">Click Here...</a>
+        </div>
+    </section>
+}
+
+@if (User.Claims.ToList().Find(claim => claim.Type == "Customer") != null)
+{
+    <section class="bg-gradient bg-warning border border-dark font-monospace fst-italic fw-bold lead lh-lg m-5 p-5 rounded-pill shadow text-body text-center text-uppercase">
+        <div class="container">
             <h1>Services List</h1> <a href="@Url.Page("/Order/ServicesList")" style="text-decoration: none">Click Here...</a>
+        </div>
+    </section>
+}
+
+@if (User.Claims.ToList().Find(claim => claim.Type == "Courier") != null)
+{
+    <section class="bg-gradient bg-warning border border-dark font-monospace fst-italic fw-bold lead lh-lg m-5 p-5 rounded-pill shadow text-body text-center text-uppercase">
+        <div class="container">
+            <h1>Couriers Page</h1> <a href="@Url.Page("/CouriersPage")" style="text-decoration: none">Click Here...</a>
         </div>
     </section>
 }

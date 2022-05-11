@@ -1,0 +1,53 @@
+@page
+@model Lila.Web.Pages.Order.OrdersHistory
+
+@{
+    ViewData["Title"] = "Orders History";
+}
+
+<div class="font-monospace fs-1 fst-italic fw-lighter lh-lg m-3 p-2 table-responsive text-center">
+    <table class="table table-striped table-sm">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Commissions</th>
+                <th>Executions</th>
+                <th>Stage</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach (var order in Model.MyOrders)
+        {
+            <tr>
+                <td>
+                    @order.Id
+                </td>
+                <td>@order.Commissions</td>
+                <td>@order.Executions</td>
+                @if (@order.Stage == null)
+                {
+                    <td>No stage</td>
+                }
+                else
+                {
+                    <td>@order.Stage!.Title</td>
+                }
+                @if (@order.Status!.Title == "Не оплачен")
+                {
+                    <td>
+                        <form method="post">
+                            <input type="number" name="orderId" value="@order.Id" hidden="hidden"/>
+                            <input type="submit" value="Не оплачен"/>
+                        </form>
+                    </td>
+                }
+                else
+                {
+                    <td>@order.Status!.Title</td>
+                }
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>

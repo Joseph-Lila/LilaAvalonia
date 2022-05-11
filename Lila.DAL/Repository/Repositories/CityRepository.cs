@@ -1,3 +1,4 @@
+using Lila.DAL.Repository.DbContext;
 using Lila.DAL.Repository.Interfaces;
 using Lila.Domain;
 using Microsoft.EntityFrameworkCore;
@@ -6,9 +7,9 @@ namespace Lila.DAL.Repository.Repositories;
 
 public class CityRepository : IRepository<City>
 {
-    private readonly Microsoft.EntityFrameworkCore.DbContext _dbContext;
+    private readonly ApplicationContext _dbContext;
 
-    public CityRepository(Microsoft.EntityFrameworkCore.DbContext dbContext)
+    public CityRepository(ApplicationContext dbContext)
     {
         _dbContext = dbContext;
     }
