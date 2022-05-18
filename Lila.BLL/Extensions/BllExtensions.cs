@@ -14,5 +14,6 @@ public static class BllExtensions
         services.AddScoped<OrderManager>();
         services.AddScoped<ServiceManager>();
         services.AddScoped<CityManager>();
+        services.AddScoped<OperatorsManager>();
     }
 }

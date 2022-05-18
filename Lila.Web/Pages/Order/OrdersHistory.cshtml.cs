@@ -27,8 +27,6 @@ public class OrdersHistory : PageModel
     {
         MyOrders = _orderManager.GetMyOrders(User.Identity!.Name!);
         _orderManager.MarkAsPaid(MyOrders.Find(x => x.Id == orderId)!);
-        Console.WriteLine("+++++++++++++++++++++++++++++++++++++++++");
-        Console.WriteLine(orderId);
         return Page();
     }
 }

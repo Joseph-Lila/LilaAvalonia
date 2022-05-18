@@ -31,7 +31,7 @@ public class OrderManager
 
     public void MarkAsPaid(MyOrder order)
     {
-        int statusId = _statusRep.GetAll().Find(x => x.Title == "Не оплачен")!.Id;
+        int statusId = _statusRep.GetAll().Find(x => x.Title == "Оплачен")!.Id;
         int stageId = _stageRep.GetAll().Find(x => x.Title == "На рассмотрении")!.Id;
         order.Status = _statusRep.GetById(statusId);
         order.Stage = _stageRep.GetById(stageId);
